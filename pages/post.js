@@ -11,19 +11,15 @@ const getPost = ({slug}) => {
 }
 
 export default class Post extends Component {
-  static async getInitialProps(context) {
-    const { query: { slug} } = context
-    const post = getPost({slug})
-
-    return {
-      post
-    }
-
-  }
-
 
   render(props){
-    const { post } = this.props
+    
+    const { url } = this.props
+
+    const { query: { slug } } = url
+    const post = getPost({slug})
+
+
 
     if(!post) return <div>nessun post corrisponde allo slug</div>
 
