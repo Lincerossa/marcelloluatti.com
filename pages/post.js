@@ -9,7 +9,7 @@ const getPost = ({slug}) => {
 export default class Post extends Component {
 
   render(props){
-    
+    console.log("props", this.props)
     const { url } = this.props
 
     const { query: { slug } } = url

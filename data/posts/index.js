@@ -1,9 +1,10 @@
-import primoPost from './primoPost'
+const primoPost = require('./primoPost')
+const secondoPost = require('./secondoPost')
 
 
 const posts = [
-  primoPost
+  primoPost,
+  secondoPost
 ]
 
-
-export default posts
+module.exports = posts
