@@ -44,17 +44,17 @@ export default () => (
                 About
               </S.ListItemHeader>
               <S.ListItemContent>
-                piccolo riassunto della mia vita
+                Lorem ipsum dolor sit amet
               </S.ListItemContent>
             </S.ListItem>
           </Link>
           <Link href="/carriera">
             <S.ListItem>
               <S.ListItemHeader>
-                carriera
+                Others
               </S.ListItemHeader>
               <S.ListItemContent>
-                altre cose a caso
+                Lorem ipsum dolor sit amet
               </S.ListItemContent>
             </S.ListItem>
           </Link>
