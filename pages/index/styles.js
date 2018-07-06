@@ -34,9 +34,6 @@ export const ListGroup = styled.div`
   margin-bottom: 2rem;
 `
 
-
-
-
 export const ListTitle = styled.div``
 
 export const List = styled.ul`
@@ -72,4 +69,9 @@ export const ListItemHeader = styled.div`
 
 export const ListItemContent = styled.div`
   padding: 1rem;
+`
+
+export const LogoWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 1rem;
 `
