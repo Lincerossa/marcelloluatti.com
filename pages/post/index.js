@@ -1,6 +1,14 @@
 import React from 'react'
-import { getPost, getSlugFromProps } from './utility'
-import * as S from './style'
+import * as S from './styles'
+import posts from '../../data/posts'
+
+const getPost = ({ slug }) => {
+  return posts.find(post => post.slug === slug)
+}
+
+const getSlugFromProps = (props) => {
+  return props && props.url && props.url.query && props.url.query.slug
+}
 
 export default (props) => {
 
