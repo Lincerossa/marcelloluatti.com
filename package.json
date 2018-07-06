@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "static": "npm run build && npm run export"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,13 @@
   },
   "homepage": "https://github.com/Lincerossa/marcelloluatti.com#readme",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "next": "^6.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.8"
   }
 }
