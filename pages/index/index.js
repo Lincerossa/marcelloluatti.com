@@ -1,11 +1,8 @@
 import React from 'react'
-import Icon from '../../components/Icon'
 import * as S from './styles'
 import Link from 'next/link'
 import posts from '../../data/posts'
 
-
-// import * as icons from '../../icons'
 
 export default () => (
 
@@ -79,8 +76,6 @@ export default () => (
     </S.PageInner>
 
 
-
-   {/* <Icon SVG={icons['arrow']} size={"small"} color={"red"} />  */}
 
   </S.PageWrapper>
 )
