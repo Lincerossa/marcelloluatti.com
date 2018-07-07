@@ -7,11 +7,12 @@ export default class MyDocument extends Document {
     const styleTags = sheet.getStyleElement()
     return { ...page, styleTags }
   }
-  render () {    
+  render () {
     return (
       <html>
         <Head>
-          <title>My page</title>
+          <title>Marcello Luatti</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
           {this.props.styleTags}
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121897228-1"></script>
@@ -20,9 +21,6 @@ export default class MyDocument extends Document {
             gtag('js', new Date());
             gtag('config', 'UA-121897228-1')`}} 
           />
-
-
-
           <script dangerouslySetInnerHTML={{__html: `
               (function(h,o,t,j,a,r){
                   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -34,14 +32,6 @@ export default class MyDocument extends Document {
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
           `}} />
-
-
-
-
-
-
-
-
         </Head>
         <body>
           <Main />
