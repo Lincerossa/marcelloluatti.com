@@ -5,6 +5,7 @@ import List from "../components/List/stories"
 import Padder from "../components/Padder/stories"
 import Wrapper from "../components/Wrapper/stories"
 import Background from "../components/Background/stories"
+import Card from "../components/Card/stories"
 
 
 
@@ -18,3 +19,4 @@ List()
 Padder()
 Wrapper()
 Background()
+Card()

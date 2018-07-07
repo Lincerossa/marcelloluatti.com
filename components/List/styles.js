@@ -15,6 +15,13 @@ export const List = styled.div`
 `
 
 export const ListItemWrapper = styled.div`
-  flex-basis: ${props => `calc(${100/props.columns}%)`};
   margin: .5rem;
+  flex-basis: 300px;
+  flex-shrink: 0;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: ${props => `calc(${100/props.columns}%)`};
+    
+  }
+
 `
