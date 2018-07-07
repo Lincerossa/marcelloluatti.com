@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import List from "../components/List/stories"
 import Padder from "../components/Padder/stories"
 import Wrapper from "../components/Wrapper/stories"
+import Background from "../components/Background/stories"
 
 
 
@@ -16,3 +17,4 @@ addDecorator(themeDecorator)
 List()
 Padder()
 Wrapper()
+Background()
