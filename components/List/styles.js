@@ -7,7 +7,6 @@ export const List = styled.div`
   display: flex;
   flex-wrap: nowrap;
   margin: 0 -.5rem;
-  border:2px solid violet;
   overflow-y: scroll;
   @media screen and (min-width: 768px) {
     flex-wrap: wrap;
