@@ -8,6 +8,7 @@ export const List = styled.div`
   flex-wrap: nowrap;
   margin: 0 -.5rem;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   @media screen and (min-width: 768px) {
     flex-wrap: wrap;
     overflow: auto;
