@@ -1,5 +1,5 @@
 module.exports  = {
-  title: "primo post", 
+  title: "Primo Post", 
   slug: "primo-post",
   media: {
     url: "http://www.unsplash.it/400/500",
@@ -8,5 +8,5 @@ module.exports  = {
   },
   supertitle: "Post",
   subtitle: "sottotitolo della card",
-  content: "contenuto della card"
+  content: "Contenuto della card"
 }
