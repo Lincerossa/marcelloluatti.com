@@ -1,25 +1,36 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import styled from 'styled-components'
 
+import posts from '../../data/posts'
 import List from './index'
+import Card from '../Card'
 
-const ListItem = ({item}) => <ListItemWrapper>ListItem: {item}</ListItemWrapper>
 
+const manyPosts = [
+  ...posts,
+  ...posts,
+  ...posts,
+  ...posts,
+  ...posts,
+  ...posts,
+  ...posts,
+]
 
 export default () =>
   storiesOf('List', module)
-    .add('Default', () => <List columns={4} items={[1,2,3,4,5]} ListItem={ListItem} />)
-    .add('Con 10', () => <List columns={10} items={[1,2,3,4,5]} ListItem={ListItem} />)
-    .add('Con 12', () => (
-      <List 
-        columns={12} 
-        items={[1,2,3,4,5,1,2,2,3,3,4,45,5,5535,545,54]} 
-        ListItem={({item})=> <ListItem item={item} /> }
-      />
-    ))
+    .add('Default', () => <List
+      items={manyPosts}
+      ListItem={({ item }) => <Card {...item} />}
+    />)
 
+    .add('8 colonne', () => <List
+      columns={8}
+      items={manyPosts}
+      ListItem={({ item }) => <Card {...item} />}
+    />)
 
-const ListItemWrapper = styled.div`
-  border: 2px solid black;
-`
+    .add('2 colonne', () => <List
+      columns={2}
+      items={manyPosts}
+      ListItem={({ item }) => <Card {...item} />}
+    />)
