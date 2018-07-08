@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styles'
 
 
-export default ({ columns, items, ListItem }) => (
+export default ({ columns = 4, items, ListItem }) => (
   <S.List>
     {
       items &&

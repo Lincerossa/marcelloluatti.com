@@ -20,7 +20,7 @@ export const ListItemWrapper = styled.div`
   flex-shrink: 0;
 
   @media screen and (min-width: 768px) {
-    flex-basis: ${props => `calc(${100/props.columns}%)`};
+    flex-basis: ${props => `calc(${100/props.columns}% - 1rem)`};
     
   }
 
