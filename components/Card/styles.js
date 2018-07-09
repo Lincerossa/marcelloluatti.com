@@ -5,20 +5,35 @@ export const Card = styled.div`
   background-color: white;
   display: block;
   height: 100%;
+  position: relative;
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.15)
   }
 `
 
-
+export const MediaWrapperFull = styled.div`
+  position: relative;
+  height: 100%;
+  &:before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
+  }
+`
 export const MediaWrapper = styled.div`
   position: relative;
   padding-top: 60%;
   overflow: hidden;
 `
 export const Media = styled.img`
-  position: absolute;
+  position: ${props => props.full ? 'inherit' : 'absolute'};
   display: block;
   top: 0;
   left: 0;
@@ -54,4 +69,8 @@ export const Content = styled.div`
 `
 export const Description = styled.div`
   padding: 1rem;
+  position: ${props => props.full ? 'absolute' : 'inherit'};
+  bottom: ${props => props.full ? '1rem' : 'inherit'};
+  color: ${props => props.full ? 'white' : 'inherit'};
+  z-index: 1;
 `

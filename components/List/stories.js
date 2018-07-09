@@ -29,6 +29,13 @@ export default () =>
       ListItem={({ item }) => <Card {...item} />}
     />)
 
+    .add('8 colonne con cardine full', () => <List
+      columns={8}
+      items={manyPosts}
+      ListItem={({ item }) => <Card {...item} options={{full:true}} />}
+    />)
+
+
     .add('2 colonne', () => <List
       columns={2}
       items={manyPosts}

@@ -19,3 +19,4 @@ const props = {
 export default () =>
   storiesOf('Card', module)
     .add('Default', () => <Card {...props} />)
+    .add('full', () => <Card {...props} options={{full:true}} />)
