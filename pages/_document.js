@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
   }
   render () {
     return (
-      <html>
+      <html lang="it">
         <Head>
           <title>Marcello Luatti</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
