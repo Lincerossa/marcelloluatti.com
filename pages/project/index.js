@@ -3,7 +3,6 @@ import * as S from './styles'
 import projects from '../../data/projects'
 
 import { Wrapper, Padder, Background } from '../../components'
-import Layout from '../../layout'
 import { getSlugFromProps } from '../utility'
 
 
@@ -16,7 +15,6 @@ export default (props) => {
   const { supertitle, title, subtitle, media, content } = project
 
   return (
-    <Layout>
       <Background color="#e2473b" textColor="#fff">
         {media && media.url && <S.MediaWrapper>
           <S.Media src={media.url} />
@@ -35,7 +33,6 @@ export default (props) => {
           </Padder>
         </Wrapper>
     </Background>
-    </Layout>
   )
 
 }
