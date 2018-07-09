@@ -36,25 +36,44 @@ export default () => (
               <Wrapper>
                 <Padder size="small">
                   <S.DisclaimerSub>Alcuni Link:</S.DisclaimerSub>
-                  <S.ListGroup>
-                    <S.ListTitle>I post</S.ListTitle>
-                    
-                      <List
-                        items={posts}
-                        ListItem={({ item }) => {
-                          return( 
-                            <Link href={`/post/${item.slug}`}>
-                              <a style={{color: "currentColor", textDecoration: "none"}}>
-                                <Card {...item} />
-                              </a>
-                            </Link>
-                          )
-                        }}
-                      />
-                    
-                  </S.ListGroup>
+                  <Padder size="small">
+                    <S.ListGroup>
+                      <S.ListTitle>I post</S.ListTitle>
+                        <List
+                          items={posts}
+                          ListItem={({ item }) => {
+                            return( 
+                              <Link href={`/post/${item.slug}`}>
+                                <div style={{color: "currentColor", height: "100%"}}>
+                                  <Card {...item} />
+                                </div>
+                              </Link>
+                            )
+                          }}
+                        />
+                    </S.ListGroup>
+                  </Padder>
+                  <Padder size="small">
+                    <S.ListGroup>
+                      <S.ListTitle>Qui andranno i progetti</S.ListTitle>
+                        <List
+                          items={posts}
+                          ListItem={({ item }) => {
+                            return( 
+                              <Link href={`/post/${item.slug}`}>
+                                <div style={{color: "currentColor", height: "100%"}}>
+                                  <Card {...item} options={{full:true}} />
+                                </div>
+                              </Link>
+                            )
+                          }}
+                        />
+                    </S.ListGroup>
+                  </Padder>
                 </Padder>
+                
               </Wrapper>
+              
           </Padder>
         </Padder>
       </Wrapper>
