@@ -1,22 +1,21 @@
 const posts = require("./data/posts")
+const projects = require("./data/projects")
 
-const postsRoutes = posts && posts.length > 0 && posts.reduce((acc,post) => {
+const getRoutesFromData = ({data, path, page}) => data.reduce((acc, resource) => {
   return {
     ...acc,
-    [`/post/${post.slug}`]: {page: '/post',  query: post}
+    [`${path}/${resource.slug}`]: {page, query: resource}
   }
 },{})
 
 
-
 // next.config.js
-module.exports = {
+module.exports = {  
   exportPathMap: async function (defaultPathMap) {
-    
-    console.log("postsRoutes", postsRoutes)
     return {
       '/': { page: '/' },
-      ...postsRoutes,
+      ...getRoutesFromData({data: posts, path: "/post", page: "/post"}),
+      ...getRoutesFromData({data: projects, path: "/project", page: "/project"}),
     }
   }
 }
