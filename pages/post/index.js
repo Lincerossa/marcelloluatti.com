@@ -2,20 +2,13 @@ import React from 'react'
 import * as S from './styles'
 import posts from '../../data/posts'
 
-import { List, Wrapper, Padder, Background, Card } from '../../components'
+import { Wrapper, Padder, Background } from '../../components'
 import Layout from '../../layout'
-
-const getPost = ({ slug }) => {
-  return posts.find(post => post.slug === slug)
-}
-
-const getSlugFromProps = (props) => {
-  return props && props.url && props.url.query && props.url.query.slug
-}
+import { getSlugFromProps } from '../utility'
 
 export default (props) => {
-
-  const post = getPost({slug: getSlugFromProps(props)})
+  const slug = getSlugFromProps(props)
+  const post = posts.find(post => post.slug === slug)
 
   if(!post) return <div>nessun post corrisponde allo slug</div>
 
