@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './styles'
 import Link from 'next/link'
 import posts from '../../data/posts'
+import projects from '../../data/projects'
 
 import { List, Wrapper, Padder, Background, Card } from '../../components'
 import Layout from '../../layout'
@@ -57,10 +58,10 @@ export default () => (
                     <S.ListGroup>
                       <S.ListTitle>Qui andranno i progetti</S.ListTitle>
                         <List
-                          items={posts}
+                          items={projects}
                           ListItem={({ item }) => {
                             return( 
-                              <Link href={`/post/${item.slug}`}>
+                              <Link href={`/project/${item.slug}`}>
                                 <div style={{color: "currentColor", height: "100%"}}>
                                   <Card {...item} options={{full:true}} />
                                 </div>
