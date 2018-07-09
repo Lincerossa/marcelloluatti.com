@@ -29,26 +29,5 @@ export const ListGroup = styled.div`
 
 export const ListTitle = styled.div``
 
-export const ListItem = styled.div`
- 
-  background-color: white;
-  height: 100%;
-  border: 1px solid black;
-  cursor: pointer;
 
-  &:hover{
-    background-color: black;
-    color: white;
-  }
-  
-`
-
-export const ListItemHeader = styled.div`
-  border-bottom:1px solid black;
-  padding: 1rem;
-`
-
-export const ListItemContent = styled.div`
-  padding: 1rem;
-`
 
