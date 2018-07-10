@@ -3,7 +3,7 @@ import * as S from './styles'
 import projects from '../../data/projects'
 
 import { Wrapper, Padder, Background } from '../../components'
-import { getSlugFromProps } from '../utility'
+import { getSlugFromProps } from '../../utility'
 
 
 export default (props) => {
