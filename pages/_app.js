@@ -1,6 +1,8 @@
 import App, {Container} from 'next/app'
 import React from 'react'
 import Layout from '../layout'
+import { DataProvider } from '../data'
+
 export default class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
     let pageProps = {}
@@ -15,9 +17,11 @@ export default class MyApp extends App {
   render () {
     const {Component} = this.props
     return <Container>
-      <Layout>
-        <Component {...this.props} />
-      </Layout>
+      <DataProvider>
+        <Layout>
+          <Component {...this.props} />
+        </Layout>
+      </DataProvider>
     </Container>
   }
 }
