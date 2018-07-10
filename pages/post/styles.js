@@ -33,7 +33,7 @@ export const MediaHeader = styled.div`
 
 export const Supertitle = styled.div`
   font-family: sans-serif;
-  color: #e74f30;
+  color: ${ props => props.theme.colors.orange};
   font-size: 1.25rem;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
