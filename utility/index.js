@@ -1,3 +1,3 @@
 export const getSlugFromProps = (props) => {
-  return props && props.router && props.router.query && props.router.query.slug
+  return props && props.url.query && props.url.query.slug
 }
