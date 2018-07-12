@@ -7,11 +7,13 @@ import Wrapper from "../../components/Wrapper/stories"
 import Background from "../../components/Background/stories"
 import Card from "../../components/Card/stories"
 
-
+import theme from '../../styles/theme'
 
 
 const themeDecorator = storyFn => (
-  storyFn()
+  <ThemeProvider theme={theme} >
+    {storyFn()}
+  </ThemeProvider>
 )
 addDecorator(themeDecorator)
 
