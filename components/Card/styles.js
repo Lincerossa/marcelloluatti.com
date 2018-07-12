@@ -43,7 +43,7 @@ export const Media = styled.img`
 
 export const Supertitle = styled.div`
   font-family: sans-serif;
-  color: #e74f30;
+  color: ${ props => props.theme.colors.orange};
   font-size: .875rem;
   text-transform: uppercase;
   margin-bottom: .5rem;
