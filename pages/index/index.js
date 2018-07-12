@@ -3,9 +3,11 @@ import * as S from './styles'
 import Link from 'next/link'
 
 import { List, Wrapper, Padder, Background, Card } from '../../components'
-import { DataConsumer } from '../../data'
+import { DataConsumer } from '../../hoc/withDataProvider'
+import globalProvider from '../../hoc'
 
-export default () => (
+
+const Page = () => (
   <Fragment>
     <Background color="#e2473b" textColor="#fff">
       <Wrapper> 
@@ -99,3 +101,5 @@ export default () => (
     </Background>
   </Fragment>
 )
+
+export default globalProvider(Page)

@@ -4,8 +4,10 @@ import posts from '../../data/posts'
 
 import { Wrapper, Padder, Background } from '../../components'
 import { getSlugFromProps } from '../../utility'
+import globalProvider from '../../hoc'
 
-export default (props) => {
+const Page = (props) => {
+
   const slug = getSlugFromProps(props)
   const post = posts.find(post => post.slug === slug)
 
@@ -35,3 +37,5 @@ export default (props) => {
   )
 
 }
+
+export default globalProvider(Page)

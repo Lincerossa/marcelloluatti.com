@@ -4,9 +4,9 @@ import projects from '../../data/projects'
 
 import { Wrapper, Padder, Background } from '../../components'
 import { getSlugFromProps } from '../../utility'
+import globalProvider from '../../hoc'
 
-
-export default (props) => {
+const Page = (props) => {
   const slug = getSlugFromProps(props)
   const project = projects.find(project => project.slug === slug)
 
@@ -36,3 +36,5 @@ export default (props) => {
   )
 
 }
+
+export default globalProvider(Page)
