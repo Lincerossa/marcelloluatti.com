@@ -6,6 +6,7 @@ import Padder from "../../components/Padder/stories"
 import Wrapper from "../../components/Wrapper/stories"
 import Background from "../../components/Background/stories"
 import Card from "../../components/Card/stories"
+import PostHero from "../../components/PostHero/stories"
 
 import theme from '../../styles/theme'
 
@@ -22,3 +23,4 @@ Padder()
 Wrapper()
 Background()
 Card()
+PostHero()
