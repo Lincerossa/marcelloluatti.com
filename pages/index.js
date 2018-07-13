@@ -2,13 +2,14 @@ import React, {Fragment} from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { List, Wrapper, Padder, Background, Card } from '../components'
+import { List, Wrapper, Padder, Background, Card, Sky } from '../components'
 import { DataConsumer } from '../hoc/withDataProvider'
 import globalProvider from '../hoc'
 
 
 const Page = () => (
   <Fragment>
+    <Sky stars={200} background="black" color="white" fixed   title="Hi, I am Marcello👻" />
     <Background color="#e2473b" textColor="#fff">
       <Wrapper> 
         <Padder size="big">
