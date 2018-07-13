@@ -132,4 +132,7 @@ const ListGroup = styled.div`
 
 const ListTitle = styled.div``
 
-export default globalProvider(Page)
+export default globalProvider({  
+  layout: {
+    basic: true,
+}})(Page)

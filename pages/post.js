@@ -1,14 +1,13 @@
 import React from 'react'
 
 import { Wrapper, Padder, Background, PostHero } from '../components'
-import { getSlugFromProps } from '../utility'
 import globalProvider from '../hoc'
 
 const Page = ({ url }) => {
 
   const { query } = url
   const { supertitle, title, subtitle, media, content } = query
-
+  
   return (
     <React.Fragment>
       <PostHero 
@@ -30,4 +29,4 @@ const Page = ({ url }) => {
 
 
 
-export default globalProvider(Page)
+export default globalProvider()(Page)

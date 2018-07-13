@@ -4,8 +4,8 @@ import withDataProvider from './withDataProvider'
 import withThemeProvider from './withThemeProvider'
 
 
-export default (WrappedComponents) => compose(
+export default (options) => (WrappedComponents) => compose(
   withDataProvider,
   withThemeProvider,
-  withLayout,
+  withLayout(options),
 )(WrappedComponents)
