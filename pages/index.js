@@ -2,14 +2,10 @@ import React, {Fragment} from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { List, Wrapper, Padder, Background, Card, Sky } from '../components'
+import { List, Wrapper, Padder, Background, Card, Sky, TextBlock } from '../components'
 import { DataConsumer } from '../hoc/withDataProvider'
 import globalProvider from '../hoc'
-
-
-
-
-
+import theme from '../styles/theme'
 
 const Page = () => (
   <Fragment>
@@ -22,21 +18,16 @@ const Page = () => (
         </SkyTitle>
       )} 
     />
-    <Background color="#e2473b" textColor="#fff">
-      <Wrapper> 
-        <Padder size="big">
-        <h1>Lorem ipsum dolor sit amet</h1>, consectetur adipiscing elit. Morbi vel erat massa. Praesent velit ex, dapibus sit amet facilisis et, bibendum ut magna. Praesent efficitur sapien nisl, nec ornare erat consectetur nec. Suspendisse sed scelerisque ex. Curabitur quis orci auctor, ultricies diam non, tincidunt dolor. Nam at mollis nibh. Fusce tortor lacus, faucibus nec lacus eget, efficitur tempus tortor. Nunc volutpat finibus quam, eget feugiat lectus rhoncus a. Fusce accumsan augue ac risus tempor vestibulum. Vivamus pharetra fringilla auctor. Praesent eu vestibulum arcu. Suspendisse a luctus dolor, quis fringilla tortor. Morbi scelerisque ante mi, vel sollicitudin velit luctus a. Maecenas auctor, nibh in ullamcorper tincidunt, sapien nulla elementum ipsum, id tincidunt nibh nisi vulputate nunc. Sed fringilla mauris quis purus finibus, non lacinia lectus gravida. Aliquam erat volutpat. Etiam pellentesque massa eget viverra vehicula. In ut ante justo. Sed nec metus nisl. Quisque eget est non turpis ultricies dapibus viverra pretium puru Vivamus in mauris sed arcu pharetra loborti Integer vitae feugiat ante. Sed hendrerit iaculis erat, molestie malesuada lectus laoreet eu. Donec facilisis, risus sed porttitor malesuada, metus turpis bibendum ipsum, quis viverra elit mauris vel ipsum. Donec lacinia magna nec nibh interdum, in luctus 
-        </Padder>
-      </Wrapper>
-    </Background>
 
-    <Background color="#1d1824" textColor="#ac01ff">
-      <Wrapper> 
-        <Padder size="big">
-        <h2>Lorem ipsum dolor sit amet</h2>, consectetur adipiscing elit. Morbi vel erat massa. Praesent velit ex, dapibus sit amet facilisis et, bibendum ut magna. Praesent efficitur sapien nisl, nec ornare erat consectetur nec. Suspendisse sed scelerisque ex. Curabitur quis orci auctor, ultricies diam non, tincidunt dolor. Nam at mollis nibh. Fusce tortor lacus, faucibus nec lacus eget, efficitur tempus tortor. Nunc volutpat finibus quam, eget feugiat lectus rhoncus a. Fusce accumsan augue ac risus tempor vestibulum. Vivamus pharetra fringilla auctor. Praesent eu vestibulum arcu. Suspendisse a luctus dolor, quis fringilla tortor. Morbi scelerisque ante mi, vel sollicitudin velit luctus a. Maecenas auctor, nibh in ullamcorper tincidunt, sapien nulla elementum ipsum, id tincidunt nibh nisi vulputate nunc. Sed fringilla mauris quis purus finibus, non lacinia lectus gravida. Aliquam erat volutpat. Etiam pellentesque massa eget viverra vehicula. In ut ante justo. Sed nec metus nisl. Quisque eget est non turpis ultricies dapibus viverra pretium puru Vivamus in mauris sed arcu pharetra loborti Integer vitae feugiat ante. Sed hendrerit iaculis erat, molestie malesuada lectus laoreet eu. Donec facilisis, risus sed porttitor malesuada, metus turpis bibendum ipsum, quis viverra elit mauris vel ipsum. Donec lacinia magna nec nibh interdum, in luctus 
-        </Padder>
-      </Wrapper>
-    </Background>
+    <TextBlock textColor="#fff" color={theme.colors.orange}>
+      <h1>Lorem ipsum dolor sit amet</h1>, consectetur adipiscing elit. Morbi vel erat massa. Praesent velit ex, dapibus sit amet facilisis et, bibendum ut magna. Praesent efficitur sapien nisl, nec ornare erat consectetur nec. Suspendisse sed scelerisque ex. Curabitur quis orci auctor, ultricies diam non, tincidunt dolor. Nam at mollis nibh. Fusce tortor lacus, faucibus nec lacus eget, efficitur tempus tortor. Nunc volutpat finibus quam, eget feugiat lectus rhoncus a. Fusce accumsan augue ac risus tempor vestibulum. Vivamus pharetra fringilla auctor. Praesent eu vestibulum arcu. Suspendisse a luctus dolor, quis fringilla tortor. Morbi scelerisque ante mi, vel sollicitudin velit luctus a. Maecenas auctor, nibh in ullamcorper tincidunt, sapien nulla elementum ipsum, id tincidunt nibh nisi vulputate nunc. Sed fringilla mauris quis purus finibus, non lacinia lectus gravida. Aliquam erat volutpat. Etiam pellentesque massa eget viverra vehicula. In ut ante justo. Sed nec metus nisl. Quisque eget est non turpis ultricies dapibus viverra pretium puru Vivamus in mauris sed arcu pharetra loborti Integer vitae feugiat ante. Sed hendrerit iaculis erat, molestie malesuada lectus laoreet eu. Donec facilisis, risus sed porttitor malesuada, metus turpis bibendum ipsum, quis viverra elit mauris vel ipsum. Donec lacinia magna nec nibh interdum, in luctus 
+    </TextBlock>
+
+
+
+
+
+  
 
     <Background color="#f4f5ef">
       <Wrapper>
