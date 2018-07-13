@@ -7,9 +7,21 @@ import { DataConsumer } from '../hoc/withDataProvider'
 import globalProvider from '../hoc'
 
 
+
+
+
+
 const Page = () => (
   <Fragment>
-    <Sky stars={200} background="black" color="white" fixed   title="Hi, I am Marcello👻" />
+    <Sky 
+      fixed  
+      renderTitle={() => (
+        <SkyTitle>
+          <SkiTitleLine1>Hi,</SkiTitleLine1> 
+          <SkiTitleLine2>I am <span>Marcello</span>👻</SkiTitleLine2>
+        </SkyTitle>
+      )} 
+    />
     <Background color="#e2473b" textColor="#fff">
       <Wrapper> 
         <Padder size="big">
@@ -132,6 +144,36 @@ const ListGroup = styled.div`
 `
 
 const ListTitle = styled.div``
+
+
+const SkyTitle = styled.div`
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  padding: 0 6rem;
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 4rem;
+    bottom: 20%;
+    left: 4rem;
+    padding: 0;
+    right: initial;
+    text-align: left;
+  }
+
+`
+
+const SkiTitleLine1 = styled.div``
+const SkiTitleLine2 = styled.div`
+  span {
+    color: ${props => props.theme.colors.orange};
+  }
+`
+
+
 
 export default globalProvider({  
   layout: {
