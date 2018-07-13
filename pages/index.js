@@ -150,7 +150,7 @@ const SkyTitle = styled.div`
   bottom: 50%;
   left: 0;
   right: 0;
-  padding: 0 6rem;
+  padding: 0 3rem;
   position: absolute;
   color: white;
   font-size: 2rem;
@@ -170,6 +170,7 @@ const SkiTitleLine1 = styled.div``
 const SkiTitleLine2 = styled.div`
   span {
     color: ${props => props.theme.colors.orange};
+    margin-right: .5rem;
   }
 `
 
