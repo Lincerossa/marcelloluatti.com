@@ -5,6 +5,6 @@ import Sky from './index'
 
 export default () =>
   storiesOf('Sky', module)
-    .add('Default', () =>  <Sky stars={150} background="black" color="white" fixed />)
+    .add('Default', () =>  <Sky fixed />)
     .add('tante', () =>  <Sky stars={200} background="black" color="white" fixed />)
     .add('tantissime', () =>  <Sky stars={300} background="black" color="white" fixed />)

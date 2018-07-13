@@ -23,14 +23,3 @@ export const Star = styled.div`
 export const Space = styled.div`
   margin-top: 100vh;
 `
-
-export const Title = styled.div`
-  position: absolute;
-  bottom: 20%;
-  left: 4rem;
-  color: white;
-  font-size: 2rem;
-  @media screen and (min-width: 768px) {
-    font-size: 4rem;
-  }
-`

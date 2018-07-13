@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 
 import * as S from "./styles";
 
-export default ({ stars, title,  background, color, fixed }) => {
+export default ({ stars = 100, renderTitle,  background="black", color="white", fixed }) => {
   const s = new Array(stars).fill(true);
   return (
     <Fragment>
@@ -15,7 +15,7 @@ export default ({ stars, title,  background, color, fixed }) => {
             color={color}
           />
         ))}
-        {title && <S.Title>{title}</S.Title>}
+        {renderTitle && typeof renderTitle === 'function' && renderTitle()}
       </S.Sky>
       {fixed && <S.Space></S.Space>}
     </Fragment>
