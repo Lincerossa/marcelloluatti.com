@@ -7,6 +7,7 @@ import Wrapper from "../../components/Wrapper/stories"
 import Background from "../../components/Background/stories"
 import Card from "../../components/Card/stories"
 import PostHero from "../../components/PostHero/stories"
+import Sky from "../../components/Sky/stories"
 
 import theme from '../../styles/theme'
 
@@ -24,3 +25,4 @@ Wrapper()
 Background()
 Card()
 PostHero()
+Sky()
