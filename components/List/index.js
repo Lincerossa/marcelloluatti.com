@@ -2,8 +2,8 @@ import React from 'react'
 import * as S from './styles'
 
 
-export default ({ columns = 4, items, ListItem }) => (
-  <S.List>
+export default ({ columns = 4, items, vertical, ListItem }) => (
+  <S.List vertical={vertical}>
     {
       items &&
       items.length > 0 &&

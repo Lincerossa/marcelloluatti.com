@@ -4,14 +4,17 @@ import styled from 'styled-components'
 export const List = styled.div`
   padding: 0;
   margin: 0;
-  display: flex;
+  display: ${props => props.vertical ? 'block': 'flex'};
   flex-wrap: nowrap;
   margin: 0 -.5rem;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   @media screen and (min-width: 768px) {
+    display: flex;
     flex-wrap: wrap;
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-y: hidden;
   }
 `
 
