@@ -5,7 +5,7 @@ import * as S from './styles'
 
 const Card = ({ options = {}, media, supertitle, title, tags, subtitle, content }) => {
 
-  const { html } = content && trimHtml(content, { limit: 100 });
+  const { html } = content && trimHtml(content, { limit: 75 });
   const { full } = options
   
   return(
