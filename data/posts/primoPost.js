@@ -8,5 +8,9 @@ module.exports  = {
   },
   supertitle: "Post",
   subtitle: "sottotitolo della card",
-  content: "Contenuto della card"
+  content: "Contenuto della card",
+  seo: {
+    title: 'Primo post',
+    description: 'Descrizione del primo post...'
+  }
 }
