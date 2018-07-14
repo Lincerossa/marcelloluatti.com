@@ -3,7 +3,7 @@ import * as S from './styles'
 
 const Header = (props) => (
   <S.Header>
-    Header
+    <a href="/">Marcello Luatti </a>
   </S.Header>
 )
 

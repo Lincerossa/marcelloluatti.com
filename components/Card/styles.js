@@ -54,12 +54,14 @@ export const Title = styled.div`
   font-weight: 600;
   line-height: 1;
   margin-bottom: .5rem;
+  color: ${props => props.full ? "white" : props.theme.colors.dark} ;
 `
 
 export const Subtitle = styled.div`
   margin-bottom: .5rem;
   text-transform: uppercase;
   font-size: .75rem;
+  color: ${props => props.full ? "white" : props.theme.colors.dark} ;
 `
 
 export const Content = styled.div`
@@ -73,4 +75,20 @@ export const Description = styled.div`
   bottom: ${props => props.full ? '1rem' : 'inherit'};
   color: ${props => props.full ? 'white' : 'inherit'};
   z-index: 1;
+`
+
+
+export const TagsWrapper = styled.div`
+  display: flex;
+  margin-bottom: .5rem;
+  font-family: sans-serif;
+  letter-spacing: .04em;
+`
+export const Tag = styled.div`
+  border-radius: 4px;
+  background: ${props => props.theme.colors.orange};
+  color: white;
+  font-size: .656rem;
+  padding: .25rem .5rem;
+  margin-right: .25rem;
 `
