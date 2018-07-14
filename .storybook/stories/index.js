@@ -10,6 +10,7 @@ import PostHero from "../../components/PostHero/stories"
 import Sky from "../../components/Sky/stories"
 import RichText from "../../components/RichText/stories"
 import TextBlock from "../../components/TextBlock/stories"
+import FocusCard from "../../components/FocusCard/stories"
 
 import theme from '../../styles/theme'
 
@@ -30,3 +31,4 @@ PostHero()
 Sky()
 RichText()
 TextBlock()
+FocusCard()
