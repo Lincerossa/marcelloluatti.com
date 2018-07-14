@@ -22,7 +22,6 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/posts': { page: '/posts' },
-      '/projects': { page: '/projects'},
       ...getRoutesFromData({data: posts, path: "/post", page: "/post"}),
       ...getRoutesFromData({data: projects, path: "/project", page: "/project"}),
       ...getRoutesFromData({data: projects, path: "/project", page: "/project"}),
