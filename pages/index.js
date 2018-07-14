@@ -11,6 +11,7 @@ const Page = () => (
   <Fragment>
     <Sky 
       fixed  
+      stars={200}
       renderTitle={() => (
         <SkyTitle>
           <SkiTitleLine1>Hi,</SkiTitleLine1> 
@@ -105,22 +106,6 @@ const Page = () => (
     </Background>
   </Fragment>
 )
-
-
-const Disclaimer = styled.div`
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-size: 2rem;
-  letter-spacing: .04em;
-  border-bottom: 1px solid #f5f5f5;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    font-size: 3rem;
-  }  
-`
 
 const LogoWrapper = styled.div`
   text-align: center;
