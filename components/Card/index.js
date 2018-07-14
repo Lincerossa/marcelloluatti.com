@@ -10,21 +10,9 @@ const Card = ({ options = {}, media, supertitle, title, tags, subtitle, content 
   
   return(
     <S.Card>
-      {
-        full 
-          ? (
-            <S.MediaWrapperFull>
-              <S.Media src={media.url} alt={media.alt} title={media.title} full={full} />
-            </S.MediaWrapperFull>
-          )
-          
-          
-          : (
-            <S.MediaWrapper>
-              <S.Media src={media.url} alt={media.alt} title={media.title} />
-            </S.MediaWrapper>
-          )
-      }
+      <S.MediaWrapper full={full} >
+        <S.Media src={media.url} alt={media.alt} title={media.title} />
+      </S.MediaWrapper>
       
       <S.Description full={full}>
         <S.Supertitle>{supertitle}</S.Supertitle>

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from '../../styles/theme'
 
 export const Card = styled.div`
   background-color: white;
@@ -12,10 +11,15 @@ export const Card = styled.div`
   }
 `
 
-export const MediaWrapperFull = styled.div`
+
+export const MediaWrapper = styled.div`
   position: relative;
-  height: 100%;
-  &:before{
+  padding-top: ${props => props.full ? '100%' : '60%'};
+  overflow: hidden;
+
+  ${props => props.full ?
+
+   `&:before{
     content: "";
     position: absolute;
     background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
@@ -25,15 +29,13 @@ export const MediaWrapperFull = styled.div`
     top: 0;
     z-index: 1;
     background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
-  }
-`
-export const MediaWrapper = styled.div`
-  position: relative;
-  padding-top: 60%;
-  overflow: hidden;
+  }`
+
+
+   : ''};
 `
 export const Media = styled.img`
-  position: ${props => props.full ? 'inherit' : 'absolute'};
+  position: absolute;
   display: block;
   top: 0;
   left: 0;
