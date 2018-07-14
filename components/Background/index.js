@@ -1,10 +1,9 @@
 import React from 'react'
 import * as S from './styles'
 
-const Background = ({ color, textColor, children }) => (
+const Background = ({ color, children }) => (
   <S.Background
     color={color}
-    textColor={textColor}
   >
     {children}
   </S.Background>

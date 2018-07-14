@@ -5,8 +5,8 @@ import Wrapper from '../Wrapper'
 import Padder from '../Padder'
 import RichText from '../RichText'
 
-const TextBlock = ({color="white", textColor="black", children}) => (
-  <Background color={color} textColor={textColor}>
+const TextBlock = ({color, children}) => (
+  <Background color={color}>
     <Wrapper> 
       <Padder size="big">
         <RichText>

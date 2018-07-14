@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Wrapper, Padder, Background, PostHero } from '../components'
 import globalProvider from '../hoc'
+import theme from '../styles/theme'
 
 const Page = ({ url }) => {
 
@@ -16,7 +17,7 @@ const Page = ({ url }) => {
         title={title}
         subtitle={subtitle}
       />
-      <Background color="#e2473b" textColor="#fff">
+      <Background color={{text:"white", background:theme.colors.orange}}>
         <Wrapper>
           <Padder size="big">
             { content && <div>{content}</div>}
