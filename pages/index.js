@@ -2,8 +2,7 @@ import React, {Fragment} from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { List, Wrapper, Padder, Background, Card, Sky, TextBlock } from '../components'
-import { DataConsumer } from '../hoc/withDataProvider'
+import { List, Wrapper, Padder, Background, FocusCard, Sky, TextBlock } from '../components'
 import globalProvider from '../hoc'
 import theme from '../styles/theme'
 
@@ -36,71 +35,32 @@ const Page = () => (
 
     <Background color="#f4f5ef">
       <Wrapper>
-        <Padder size="small">
-          <Padder size="small">
-            
-            <Wrapper>
-              <Padder size="small">
-                <DisclaimerSub>Alcuni Link:</DisclaimerSub>
-                <DataConsumer>
-                  {
-                    ({posts}) => {
-                      if(!posts || !posts.length) return null
-                      
-                      return(
-                        <Padder size="small">
-                          <ListGroup>
-                            <ListTitle>I post</ListTitle>
-                              <List
-                                items={posts}
-                                ListItem={({ item }) => {
-                                  return( 
-                                    <Link href={`/post/${item.slug}`}>
-                                      <div style={{color: "currentColor", height: "100%"}}>
-                                        <Card {...item} />
-                                      </div>
-                                    </Link>
-                                  )
-                                }}
-                              />
-                          </ListGroup>
-                        </Padder>
-                      )
-                    }
-                  }
-                </DataConsumer>
-
-                <DataConsumer>
-                  {
-                    ({ projects }) => {
-                      if(!projects || !projects.length) return null
-                        return(
-                        <Padder size="small">
-                          <ListGroup>
-                            <ListTitle>Qui andranno i progetti</ListTitle>
-                              <List
-                                items={projects}
-                                ListItem={({ item }) => {
-                                  return( 
-                                    <Link href={`/project/${item.slug}`}>
-                                      <div style={{color: "currentColor", height: "100%"}}>
-                                        <Card {...item} options={{full:true}} />
-                                      </div>
-                                    </Link>
-                                  )
-                                }}
-                              />
-                          </ListGroup>
-                        </Padder>
-                      )
-                    }
-                  }
-                </DataConsumer>
-              </Padder>
-                
-            </Wrapper>
-              
-          </Padder>
+        <Padder size="big">
+          <List
+            columns="2"
+            items={[{
+              title: 'projects',
+              url: '/projects',
+              content: 'Go to projects...',
+              backgroundColor: theme.colors.dark,
+              textColor: "white",
+            },
+            {
+              title: 'posts',
+              url: '/posts',
+              content: 'Vai ai post',
+              backgroundColor: theme.colors.orange,
+              textColor: "white",
+            }]}
+            vertical
+            ListItem={({ item }) => {
+              return( 
+                <a href={item.url} style={{textDecoration: 'none', color: 'currentColor'}}>
+                  <FocusCard {...item}/>
+                </a>
+              )
+            }}
+          />
         </Padder>
       </Wrapper>
     </Background>
@@ -111,15 +71,6 @@ const LogoWrapper = styled.div`
   text-align: center;
 `
 
-const DisclaimerSub = styled.div`
-  font-weight: 600;
-  margin-bottom: .5rem;
-`
-
-const ListGroup = styled.div`
-`
-
-const ListTitle = styled.div``
 
 
 const SkyTitle = styled.div`
