@@ -1,10 +1,43 @@
 import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 import theme from '../styles/theme'
-import { List, Wrapper, Padder, Card, TextBlock, Background } from '../components'
+import { List, Wrapper, Padder, Card, TextBlock, Background, Loading } from '../components'
 import { DataConsumer } from '../hoc/withDataProvider'
 import globalProvider from '../hoc'
+
+const Input = (props) => (
+  <InputWrapper>
+    <input {...props} />
+    {props.loading && <LoadingWrapper><Loading /></LoadingWrapper>}
+  </InputWrapper>
+)
+
+
+const InputWrapper = styled.div`
+  position: relative;
+  max-width: 300px;
+  input {
+    width: 100%;
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: .04em;
+    padding: .25rem;
+    font-family: sans-serif;
+  }
+`
+
+const LoadingWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+
+`
+
+
+
+
 
 const Page = () => (
   <>
@@ -19,16 +52,20 @@ Vestibulum et feugiat ex. Maecenas libero tortor, aliquet id condimentum nec, lo
         <Padder size="small">
           <DataConsumer>
             {
-              ({ posts, query, handleSearch}) => {
+              ({ posts, loading, handleSearch}) => {
                   return(
                     <>
-                      <input value={query} onChange={e => handleSearch({query: e.target.value, data: 'posts'})} />
+                      <Input
+                        placeholder="Cerca un post" 
+                        onChange={e => handleSearch({query: e.target.value, data: 'posts'})}
+                        loading={loading}
+                      />
                      {
                        (!posts || !posts.length)
                         ? <div> nessun post</div>
                         : (<List
                             vertical
-                            columns="6"
+                            columns="3"
                             items={posts}
                             ListItem={({ item }) => {
                               return( 
