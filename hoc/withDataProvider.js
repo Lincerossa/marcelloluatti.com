@@ -88,7 +88,7 @@ class MyProvider extends Component {
 
     return (
       <Provider value={{posts, projects, query, loading, handleSearch: this.prepareHandleSearch }}>
-        <WrappedComponent {...props} />
+        <WrappedComponent {...this.props} />
       </Provider>
     )
   }
