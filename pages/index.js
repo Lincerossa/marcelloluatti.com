@@ -80,8 +80,8 @@ const Page = () => (
                     return(
                       <List
                         items={posts}
-                        limit="4"
-                        columns="5"
+                        limit="3"
+                        columns="4"
                         renderLastItem={() => (
                           <Link href="/posts">
                             <div style={{color: "currentColor", height: "100%"}}>
@@ -146,6 +146,7 @@ const LastItem = styled.div`
   border: 1px solid;
   background-color: ${props => props.inverted ? props.theme.colors.dark : 'inherit'};
   color: ${props => props.inverted ? "white" : 'inherit'};
+  cursor: ${props => props.inverted ? "pointer" : 'inherit'}; 
   span {
     color: ${props => props.theme.colors.orange};
   }

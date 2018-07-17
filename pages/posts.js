@@ -19,22 +19,31 @@ Vestibulum et feugiat ex. Maecenas libero tortor, aliquet id condimentum nec, lo
         <Padder size="small">
           <DataConsumer>
             {
-              ({ posts }) => {
-                if(!posts || !posts.length) return null
+              ({ posts, query, handleSearch}) => {
                   return(
-                    <List
-                      columns="6"
-                      items={posts}
-                      ListItem={({ item }) => {
-                        return( 
-                          <Link href={`/post/${item.slug}`}>
-                            <div style={{color: "currentColor", height: "100%"}}>
-                              <Card {...item} />
-                            </div>
-                          </Link>
+                    <>
+                      <input value={query} onChange={e => handleSearch({query: e.target.value, data: 'posts'})} />
+                     {
+                       (!posts || !posts.length)
+                        ? <div> nessun post</div>
+                        : (<List
+                            vertical
+                            columns="6"
+                            items={posts}
+                            ListItem={({ item }) => {
+                              return( 
+                                <Link href={`/post/${item.slug}`}>
+                                  <div style={{color: "currentColor", height: "100%"}}>
+                                    <Card {...item} />
+                                  </div>
+                                </Link>
+                              )
+                            }}
+                          />
                         )
-                      }}
-                    />
+                     } 
+                      
+                    </>
                 )
               }
             }
@@ -44,7 +53,6 @@ Vestibulum et feugiat ex. Maecenas libero tortor, aliquet id condimentum nec, lo
     </Background>
   </>
 )
-
 
 
 
