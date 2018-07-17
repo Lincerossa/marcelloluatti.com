@@ -11,6 +11,7 @@ import Sky from "../../components/Sky/stories"
 import RichText from "../../components/RichText/stories"
 import TextBlock from "../../components/TextBlock/stories"
 import FocusCard from "../../components/FocusCard/stories"
+import Loading from "../../components/Loading/stories"
 
 import theme from '../../styles/theme'
 
@@ -32,3 +33,4 @@ Sky()
 RichText()
 TextBlock()
 FocusCard()
+Loading()
