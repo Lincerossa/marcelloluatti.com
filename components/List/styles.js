@@ -10,10 +10,11 @@ export const List = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
-    overflow-y: hidden;
+    overflow-x: hidden;
     overflow-y: hidden;
   }
 `
