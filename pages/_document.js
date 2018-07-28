@@ -3,26 +3,17 @@ import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static getInitialProps (ctx) {
-
-    const seo = (ctx.query && ctx.query.seo) || {
-      title: 'Marcello Luatti',
-      description: 'Hi, I am Marcello Luatti',
-    }
-
     const sheet = new ServerStyleSheet()
     const page = ctx.renderPage(App => props => sheet.collectStyles(<App {...props} />))
     const styleTags = sheet.getStyleElement()
-    return { ...page, styleTags, seo }
+    return { ...page, styleTags }
   }
   render () {
 
-    const { styleTags, seo } = this.props
+    const { styleTags } = this.props
     return (
       <html lang="it">
         <Head>
-          <title>{seo.title}</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta name="description" content={seo.description} />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
           {styleTags}
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121897228-1"></script>

@@ -8,14 +8,6 @@ const getRoutesFromData = ({data, path, page}) => data.reduce((acc, resource) =>
   }
 },{})
 
-
-
-
-
-
-
-
-
 // next.config.js
 module.exports = {  
   exportPathMap: async function (defaultPathMap) {
@@ -23,7 +15,6 @@ module.exports = {
       '/': { page: '/' },
       '/posts': { page: '/posts' },
       ...getRoutesFromData({data: posts, path: "/post", page: "/post"}),
-      ...getRoutesFromData({data: projects, path: "/project", page: "/project"}),
       ...getRoutesFromData({data: projects, path: "/project", page: "/project"}),
     }
   }
