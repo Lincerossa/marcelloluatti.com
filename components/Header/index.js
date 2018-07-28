@@ -1,9 +1,10 @@
 import React from 'react'
 import * as S from './styles'
+import Link from 'next/link'
 
 const Header = (props) => (
   <S.Header>
-    <a href="/">Marcello Luatti </a>
+    <Link href="/">Marcello Luatti </Link>
   </S.Header>
 )
 

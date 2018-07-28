@@ -4,9 +4,8 @@ import { Layout } from '../components'
 
 
 const WithLayout = (options) => WrappedComponent => props => {
-
   return (
-    <Layout options={options} >
+    <Layout options={options} {...props}>
       <WrappedComponent {...props} />
     </Layout>
   )
