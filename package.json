@@ -1,39 +1,45 @@
 {
-  "name": "marcelloluatti.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "static": "npm run build && npm run export"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lincerossa/marcelloluatti.com.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lincerossa/marcelloluatti.com/issues"
-  },
-  "homepage": "https://github.com/Lincerossa/marcelloluatti.com#readme",
+  "name": "marcelloluatti",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Marcello Luatti <marcelloluatti@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
-    "debounce": "^1.1.0",
-    "next": "^6.1.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "recompose": "^0.27.1",
-    "styled-components": "^3.3.3",
+    "@ant-design/icons": "^4.3.0",
+    "antd": "^4.8.5",
+    "next": "^10.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-lazy-images": "^1.1.0",
+    "styled-components": "^5.2.1",
     "trim-html": "^0.1.9"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.8"
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "semantic-release": "^17.3.0"
+  },
+  "license": "MIT",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "branches": [
+      "master"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build:static": "next build && next export",
+    "start": "next start",
+    "clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf build/ ",
+    "release": "semantic-release --no-ci"
   }
 }
