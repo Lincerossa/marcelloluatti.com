@@ -1,24 +1,18 @@
 import styled from 'styled-components'
 
-export const Image = styled.img`
-  transition: all .25s;
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: ${props => props.type || "contain"};
-  position:relative;
-  ${props => props.loading && `
-    filter: blur(5px) grayscale(40%);
-  `} 
-  ${props => props.success && `
-    filter: auto;
-  `} 
-  background-color: ${props => props.theme.colors.black.primary};
+export const ImageWrapper = styled.div`
+  image {
+    transition: all .25s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: ${props => props.type || "contain"};
+    position:relative;
+  }
 
 `
-
 
 export const Shadow = styled.div`
   position: absolute;

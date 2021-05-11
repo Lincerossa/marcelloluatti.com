@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const HeroWrapper = styled.div`
   position: relative;
-
+  height: 100vh;
   img {
     display: block;
     width: 100%;
