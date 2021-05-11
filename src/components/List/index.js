@@ -10,7 +10,7 @@ const getListItems = ({items, limit}) => {
 }
 
 
-export default ({ columns = 4, items, vertical, ListItem, limit, renderLastItem }) => {
+const List = ({ columns = 4, items, vertical, ListItem, limit, renderLastItem }) => {
   const listItems = items && items.length > 0 && getListItems({items, limit})
   if(!listItems || !listItems.length) { return null }
   return(
@@ -30,3 +30,5 @@ export default ({ columns = 4, items, vertical, ListItem, limit, renderLastItem 
     </S.List>
   )
 }
+
+export default List

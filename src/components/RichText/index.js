@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles.js'
 
-export default ({ text, children }) => {
+const RichText = ({ text, children }) => {
 
   if(text) return (<S.RichText
     dangerouslySetInnerHTML={{__html: text}}
@@ -11,3 +11,5 @@ export default ({ text, children }) => {
 
   return null
 }
+
+export default RichText
