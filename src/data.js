@@ -46,7 +46,7 @@ const data = {
       id: "Hero_projects",
       component: "Hero",
       image: {
-        src: "http://www.unsplash.it/1000/1300"
+        src: "https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"
       },
       supertitle: "work",
       title: "Projects",
@@ -67,7 +67,7 @@ const data = {
       items: [
         {
           slug: "projects/bpmn",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "dashboard | bpmn",
           title: "Godoo bpmn",
           tags: ["react",  "styled-components", "gatsby"],
@@ -76,7 +76,7 @@ const data = {
         },
         {
           slug: "projects/godoo",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "website",
           title: "Godoo website",
           tags: ["react",  "styled-components", "gatsby"],
@@ -85,7 +85,7 @@ const data = {
         },
         {
           slug: "projects/salini",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "dashboard",
           title: "Salini Impregilo",
           tags: ["react", "cra", "styled-components", "prisma"],
@@ -94,7 +94,7 @@ const data = {
         },
         {
           slug: "projects/corneliani",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "ecommerce",
           title: "Moleskine blog",
           tags: ["react", "next", "styled-components", "graphql"],
@@ -103,7 +103,7 @@ const data = {
         },
         {
           slug: "projects/fai",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "istutuzionale",
           title: "Fondoambiente",
           tags: ["react", "next", "styled-components"],
@@ -113,7 +113,7 @@ const data = {
 
         {
           slug: "projects/moleskine",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "blog",
           title: "Moleskine blog",
           tags: ["blade", "scss", "es6", "webpack"],
@@ -123,7 +123,7 @@ const data = {
 
         {
           slug: "projects/supermoney",
-          media:{url:"http://www.unsplash.it/1000/1300"} ,
+          image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"} ,
           supertitle: "product",
           title: "Supermoney",
           tags: ["es6", "bem"],
