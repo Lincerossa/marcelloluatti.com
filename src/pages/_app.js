@@ -8,8 +8,8 @@ import {Footer, Header, MagicMouse } from '../../src/components'
 import { routes } from '../data'
 
 function App({ Component, pageProps }) {
-  const { currentRoute, inverted, metaTitle, metaDescription } = pageProps
-
+  const { route } = pageProps
+  const { inverted, metaTitle, metaDescription } = route
   return (
     <>
       <Head>
@@ -25,10 +25,9 @@ function App({ Component, pageProps }) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
-          <Header currentRoute={currentRoute} routes={routes} inverted={inverted ? true : false} />
+          <Header route={route} routes={routes} inverted={inverted ? true : false} />
           <Component {...pageProps} />
           <Footer />
-          <MagicMouse />
         </Main>
       </ThemeProvider>
     </>
