@@ -41,7 +41,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build:static": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf build/ ",
     "release": "semantic-release --no-ci"
