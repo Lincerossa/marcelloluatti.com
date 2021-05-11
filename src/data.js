@@ -7,7 +7,7 @@ const data = {
       metaDescription: "Marcello Luatti description",
       metaImage: null,
       hidden: true,
-      componentIds: ["RichText_homepage"]
+      componentIds: ["R3F_homepage", "RichText_homepage"]
     },
     {
       slug: "due",
@@ -17,16 +17,13 @@ const data = {
       metaImage: null,
       componentIds: ["RichText_homepage"]
     },
-    {
-      slug: "due/tre",
-      label: "tre",
-      metaTitle: "Marcello Luatti | CavLince",
-      metaDescription: "Marcello Luatti description",
-      metaImage: null,
-      componentIds: ["RichText_homepage2"]
-    },
   ],
   components: [
+    {
+      id: "R3F_homepage",
+      component: "R3F",
+      text: "Prova 2",
+    },
     {
       id: "RichText_homepage",
       component: "RichText",
@@ -34,13 +31,7 @@ const data = {
       background: "red",
       padder: "large",
     },
-    {
-      id: "RichText_homepage2",
-      component: "RichText",
-      text: "Prova222",
-      background: "red",
-      padder: "large",
-    },
+
   ]
 }
 

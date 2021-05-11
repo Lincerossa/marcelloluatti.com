@@ -18,7 +18,7 @@ const App = ({ components }) => components?.map(({id, component ,...props}) => {
 
 export async function getStaticPaths() {
   return {
-    paths: routes.map(({slug}) => ({params: {
+    paths: routes.filter((e) => e.slug !== "").map(({slug}) => ({params: {
       dynamic: slug.split("/")
     }})),
     fallback: false
