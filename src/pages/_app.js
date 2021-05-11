@@ -4,12 +4,12 @@ import styled, { ThemeProvider } from 'styled-components'
 import 'antd/dist/antd.css';
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/global'
-import {Footer, Header, MagicMouse } from '../../src/components'
+import {Footer, Header } from '../../src/components'
 import { routes } from '../data'
 
 function App({ Component, pageProps }) {
   const { route } = pageProps
-  const { inverted, metaTitle, metaDescription } = route
+  const { metaTitle, metaDescription } = route || {}
   return (
     <>
       <Head>
@@ -25,7 +25,7 @@ function App({ Component, pageProps }) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
-          <Header route={route} routes={routes} inverted={inverted ? true : false} />
+          <Header route={route} routes={routes} />
           <Component {...pageProps} />
           <Footer />
         </Main>
