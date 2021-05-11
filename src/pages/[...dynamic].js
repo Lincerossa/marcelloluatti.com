@@ -30,7 +30,7 @@ export async function getStaticProps({ params: {dynamic} }) {
   return {
     props: {
       route,
-      components: components.filter(({id}) => route.componentIds.includes(id))
+      components: route.componentIds.map(component => components.find(({id}) => id === component))
     }
   }
 }

@@ -21,7 +21,7 @@ export async function getStaticProps() {
   return {
     props: {
       route,
-      components: components.filter(({id}) => route.componentIds.includes(id))
+      components: route.componentIds.map(component => components.find(({id}) => id === component))
     }
   }
 }
