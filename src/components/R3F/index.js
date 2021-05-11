@@ -6,7 +6,6 @@ import * as S from './styles'
 
 const Model = (props) => {
   const group = useRef();
-  const [isActive, setActive] = useState(null)
 
   const { nodes, materials } = useGLTF("/test.gltf");
 
@@ -17,18 +16,12 @@ const Model = (props) => {
   return (
     <group ref={group} {...props} dispose={null} scale={0.4}>
       <mesh
-        onClick={props.handleClick}
-        onPointerEnter={(e) => setActive(true)}
-        onPointerLeave={(e) => setActive(false)}
         castShadow
         receiveShadow
         geometry={nodes.Curve007_1.geometry}
         material={materials["Material.001"]}
       />
       <mesh
-        onClick={props.handleClick}
-        onPointerEnter={(e) => setActive(true)}
-        onPointerLeave={(e) => setActive(false)}
         castShadow
         receiveShadow
         geometry={nodes.Curve007_2.geometry}
@@ -47,13 +40,17 @@ const R3F = () => {
 
   return (
     <S.CanvasWrapper>
-    <Canvas>
-      <Suspense fallback={null}>
-        <Model handleClick={handleClick} />
-        <OrbitControls />
-        <Environment preset="forest" background />
-      </Suspense>
-    </Canvas>
+      <S.Title><div>Hi 👋🏻</div><div>I am <span>Marcello</span></div></S.Title>
+      <Canvas>
+        <Suspense fallback={null}>
+          <Model />
+          <Model />
+          <OrbitControls />
+          <Environment preset="forest" background />
+          <ambientLight intensity={1} />
+          <directionalLight color="red" position={[0, 0, 5]} />
+        </Suspense>
+      </Canvas>
   </S.CanvasWrapper>
   )
 }

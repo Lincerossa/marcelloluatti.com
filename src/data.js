@@ -10,8 +10,16 @@ const data = {
       componentIds: ["R3F_homepage", "RichText_homepage"]
     },
     {
-      slug: "due",
-      label: "due",
+      slug: "projects",
+      label: "projects",
+      metaTitle: "Marcello Luatti | CavLince",
+      metaDescription: "Marcello Luatti description",
+      metaImage: null,
+      componentIds: ["RichText_homepage"]
+    },
+    {
+      slug: "blog",
+      label: "blog",
       metaTitle: "Marcello Luatti | CavLince",
       metaDescription: "Marcello Luatti description",
       metaImage: null,
