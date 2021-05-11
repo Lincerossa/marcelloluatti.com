@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 
 export const Footer = styled.div`
-  background-color: ${ props => props.theme.colors.dark};
-  color: white;
-  padding: 2rem 0;
+  background-color: ${ props => props.theme.colors.secondary};
+  color: ${ props => props.theme.colors.primary};
 `
 
 export const FooterInner = styled.div`
-  border: 1px solid white;
+  padding: 1rem 0;
 `

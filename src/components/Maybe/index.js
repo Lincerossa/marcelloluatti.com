@@ -4,10 +4,10 @@ import Background from '../Background'
 import Wrapper from '../Wrapper'
 import Padder from '../Padder'
 
-export const WithBackground = ({background, children}) => {
+export const WithBackground = ({background, color, children}) => {
 
  if( background){
-   return <Background background={background}>{children} </Background>
+   return <Background background={background} color={color}>{children} </Background>
  } 
  return children
 }

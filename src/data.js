@@ -1,3 +1,5 @@
+import theme from './styles/theme'
+
 const data = {
   routes: [
     {
@@ -7,7 +9,7 @@ const data = {
       metaDescription: "Marcello Luatti description",
       metaImage: null,
       hidden: true,
-      componentIds: ["R3F_homepage", "RichText_homepage"]
+      componentIds: ["R3F_homepage","RichText_homepage"]
     },
     {
       slug: "projects",
@@ -30,14 +32,15 @@ const data = {
     {
       id: "R3F_homepage",
       component: "R3F",
-      text: "Prova 2",
     },
     {
       id: "RichText_homepage",
       component: "RichText",
-      text: "Prova",
-      background: "red",
+      text: "<h3>This website is under developement 🚁</h3>",
+      background: theme.colors.secondary,
+      color: theme.colors.primary,
       padder: "large",
+      wrapper: "large",
     },
 
   ]

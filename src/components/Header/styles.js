@@ -111,7 +111,7 @@ export const Hamburger = styled.div`
   right: 1rem;
   color: white;
   font-size: 1.5rem;
-  color: ${props => props.inverted ? "white" : props.theme.colors.thirdary };
+  color: ${props => props.inverted ? "white" : props.theme.colors.primary };
   ${props => props.isOpen && "color: white"};
   @media (min-width: 768px){
     display: none;

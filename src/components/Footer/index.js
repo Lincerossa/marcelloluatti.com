@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper'
 
 const Footer = (props) => (
   <S.Footer>
-    <Wrapper>
+    <Wrapper size="large">
       <S.FooterInner>
         footer
       </S.FooterInner>

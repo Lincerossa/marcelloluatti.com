@@ -31,7 +31,7 @@ export const Shadow = styled.div`
 
 `
 export const Description = styled.div`
-  color: ${props => props.theme.colors.thirdary};
+  color: ${props => props.theme.colors.primary};
   font-style: oblique;
   font-size: .75rem;
   font-weight: 300;

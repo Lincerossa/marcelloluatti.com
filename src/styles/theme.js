@@ -1,8 +1,7 @@
 export default {
   colors: {
     primary: '#e74f30',
-    secondary:'#212121',
-    thirdary:"#0a4f7a",
+    secondary:'#08122a',
     black: {
       primary: "#080808",
       secondary: "#314659"
