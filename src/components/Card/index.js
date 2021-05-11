@@ -8,9 +8,9 @@ const Card = ({ image, supertitle, title, tags, subtitle, content }) => {
   const { html } = content && trimHtml(content, { limit: 75 });
   return(
     <S.Card>
-      <S.MediaWrapper>
+      <S.ImageWrapper>
         <Image image={image} />
-      </S.MediaWrapper>
+      </S.ImageWrapper>
       
       <S.Description>
         <S.Supertitle>{supertitle}</S.Supertitle>

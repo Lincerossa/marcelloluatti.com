@@ -12,7 +12,7 @@ export const Card = styled.div`
 `
 
 
-export const MediaWrapper = styled.div`
+export const ImageWrapper = styled.div`
   position: relative;
   padding-top: 100%;
   overflow: hidden;
@@ -26,6 +26,13 @@ export const MediaWrapper = styled.div`
     top: 0;
     z-index: 1;
     background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
+  }
+  img {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 `
 export const Media = styled.img`
