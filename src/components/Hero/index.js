@@ -2,13 +2,11 @@ import React from 'react'
 import * as S from './styles'
 import Wrapper from '../Wrapper'
 import Image from '../Image'
-import TextDistortion from '../TextDistortion'
-
 
 const Hero = ({ image, maintitle, title, subtitle, supertitle }) => (
   <S.HeroWrapper>
     <Image image={image} hasShadow />
-    {maintitle && <S.Maintitle><TextDistortion>{maintitle}</TextDistortion></S.Maintitle>}
+    {maintitle && <S.Maintitle>{maintitle}</S.Maintitle>}
     <S.HeroHeader>
       <Wrapper size="large">
         {supertitle && <S.Supertitle>{supertitle}</S.Supertitle>}
