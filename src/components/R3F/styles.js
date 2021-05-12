@@ -15,7 +15,8 @@ export const Title = styled.div`
   line-height: 1;
   color: white;
   span {
+    
     font-size: 3rem;
-    color: ${props => props.theme.colors.thirdary};
+    color: ${props => props.theme.colors.primary};
   }
 `

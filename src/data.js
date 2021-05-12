@@ -5,6 +5,7 @@ const data = {
     {
       slug: "",
       label: "Marcello Luatti",
+      hiddenLabel: true,
       metaTitle: "Marcello Luatti | CavLince",
       metaDescription: "Marcello Luatti description",
       metaImage: null,

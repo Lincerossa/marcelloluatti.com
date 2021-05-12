@@ -9,7 +9,7 @@ import { routes } from '../data'
 
 function App({ Component, pageProps }) {
   const { route } = pageProps
-  const { metaTitle, metaDescription, label, hidden } = route || {}
+  const { metaTitle, metaDescription, label, hiddenLabel } = route || {}
   return (
     <>
       <Head>
@@ -26,7 +26,7 @@ function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Main>
           <Header route={route} routes={routes} />
-          {!hidden && label && <MainLabel><Wrapper size="large"><div className="glitch">{label}</div></Wrapper></MainLabel>}
+          {!hiddenLabel && label && <MainLabel><Wrapper size="large"><div className="glitch">{label}</div></Wrapper></MainLabel>}
           <Component {...pageProps} />
           <Footer />
         </Main>
