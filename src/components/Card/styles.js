@@ -75,7 +75,7 @@ export const Content = styled.div`
 export const Description = styled.div`
   padding: 1rem;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0;
   color: white;
   z-index: 1;
 `

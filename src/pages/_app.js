@@ -4,12 +4,12 @@ import styled, { ThemeProvider } from 'styled-components'
 import 'antd/dist/antd.css';
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/global'
-import {Footer, Header } from '../../src/components'
+import {Footer, Header, Wrapper } from '../../src/components'
 import { routes } from '../data'
 
 function App({ Component, pageProps }) {
   const { route } = pageProps
-  const { metaTitle, metaDescription } = route || {}
+  const { metaTitle, metaDescription, label, hidden } = route || {}
   return (
     <>
       <Head>
@@ -26,6 +26,7 @@ function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Main>
           <Header route={route} routes={routes} />
+          {!hidden && label && <MainLabel><Wrapper size="large"><div className="glitch">{label}</div></Wrapper></MainLabel>}
           <Component {...pageProps} />
           <Footer />
         </Main>
@@ -36,8 +37,18 @@ function App({ Component, pageProps }) {
 
 const Main = styled.main`
   min-height: 100vh;
-  padding-top: ${props => props.hasTitle ? '6rem' : '0'};
-  ${props => props.status === "loading" && 'opacity: 0'};
+`
+const MainLabel = styled.div`
+  height: 100vh;
+  position: relative;
+  background-color: ${props => props.theme.colors.secondary};
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid ${props => props.theme.colors.primary};
+  font-size: 5rem;
+  @media (min-width: 978px){
+    font-size: 15rem;
+  }
 `
 
 export default App
