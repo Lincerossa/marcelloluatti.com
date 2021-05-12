@@ -3,13 +3,14 @@ import Head from 'next/head'
 import styled, { ThemeProvider } from 'styled-components'
 import 'antd/dist/antd.css';
 import theme from '../styles/theme'
+import * as C from '../styles/common'
 import GlobalStyle from '../styles/global'
 import {Footer, Header, Wrapper } from '../../src/components'
 import { routes } from '../data'
 
 function App({ Component, pageProps }) {
   const { route } = pageProps
-  const { metaTitle, metaDescription, label, hiddenLabel } = route || {}
+  const { metaTitle, metaDescription, label, hiddenLabel, hiddenFooter } = route || {}
   return (
     <>
       <Head>
@@ -25,10 +26,10 @@ function App({ Component, pageProps }) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
-          <Header route={route} routes={routes} />
-          {!hiddenLabel && label && <MainLabel><Wrapper size="large"><div className="glitch">{label}</div></Wrapper></MainLabel>}
+          <Header route={route} routes={routes} showMenu={!hiddenLabel} />
+          {!hiddenLabel && label && <MainLabel><Wrapper size="large"><C.Glitch text={label}>{label}</C.Glitch></Wrapper></MainLabel>}
           <Component {...pageProps} />
-          <Footer />
+          {!hiddenFooter && <Footer />}
         </Main>
       </ThemeProvider>
     </>

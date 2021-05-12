@@ -7,7 +7,7 @@ import Logo from '../Logo'
 import { useScrollDirection } from '../../hooks'
 
 
-const Header = ({ routes, route }) => {
+const Header = ({ routes, route, showMenu }) => {
   const {scrollDirection, scrollPosition} = useScrollDirection()
   const [isOpen, setMenuOpen] = useState(null)
 
@@ -26,7 +26,7 @@ const Header = ({ routes, route }) => {
               </a>
             </Link>
           </S.Logo>
-          <S.Menu isOpen={isOpen} inverted={shouldBeInverted}>
+          {showMenu && <S.Menu isOpen={isOpen} inverted={shouldBeInverted}>
             <S.MenuItems>
               {
                 routes?.filter(e => !e.hidden).map((e) => {
@@ -40,9 +40,9 @@ const Header = ({ routes, route }) => {
                 })
               }
               </S.MenuItems>
-            </S.Menu>
-          <S.Hamburger isOpen={isOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isOpen)}>
-            { isOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>
+            </S.Menu>}
+          {showMenu && <S.Hamburger isOpen={isOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isOpen)}>
+            { isOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>}
         </S.HeaderInner>
       </Wrapper>
     </S.Header>

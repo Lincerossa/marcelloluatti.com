@@ -7,7 +7,7 @@ export const Card = styled.div`
   position: relative;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.15)
+    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,1)
   }
 `
 
