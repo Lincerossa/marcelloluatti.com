@@ -13,20 +13,29 @@ export default createGlobalStyle`
   strong {
     font-weight: 600;
   }
-
-  h1 {
-    font-size: 2.5rem;
+  h1, h2, h3, h4 {
     font-weight: 500;
     color: ${theme.colors.primary};
+    position: relative;
+    &:before {
+      content:"";
+      width: 5rem;
+      border-bottom: 2px solid ${theme.colors.thirdary};
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
     @media (min-width: 768px){
       font-size: 3rem;
     }
   }
 
   h2 {
-    font-size:1.5rem;
-    font-weight: 500;
-    color: ${theme.colors.primary};
+    font-size: 1.5rem;
     @media (min-width: 768px){
       font-size: 2rem;
     }
@@ -34,8 +43,6 @@ export default createGlobalStyle`
 
   h3 {
     font-size: 1.125rem;
-    font-weight: 500;
-    color: ${theme.colors.primary};
     @media (min-width: 768px){
       font-size: 1.5
     }
