@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CloseOutlined,MenuOutlined } from '@ant-design/icons';
 import Wrapper from '../Wrapper'
 import * as S from './styles'
-import Logo from '../Logo'
+import * as C from './../../styles/common'
 import { useScrollDirection } from '../../hooks'
 
 
@@ -22,7 +22,7 @@ const Header = ({ routes, route, showMenu }) => {
           <S.Logo inverted={shouldBeInverted}>
             <Link href="/">
               <a>
-                <Logo />
+                <C.Glitch text="MLua">MLua</C.Glitch>
               </a>
             </Link>
           </S.Logo>

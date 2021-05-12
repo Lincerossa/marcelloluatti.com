@@ -34,6 +34,10 @@ export const HeaderInner = styled.div`
 `
 export const Logo = styled.div`
   width: 50px;
+  left: 1rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  position: relative;
   @media (min-width:768px){
     width: 60px;
   }
