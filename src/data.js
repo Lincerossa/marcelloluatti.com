@@ -9,7 +9,7 @@ const data = {
       metaDescription: "Marcello Luatti description",
       metaImage: null,
       hidden: true,
-      componentIds: ["R3F_homepage","RichText_homepage"]
+      componentIds: ["R3F_homepage", "RichText_homepage", "ListOfCards_projects"]
     },
     {
       slug: "projects",
@@ -17,15 +17,7 @@ const data = {
       metaTitle: "Marcello Luatti | Projects",
       metaDescription: "List of Projects",
       metaImage: null,
-      componentIds: ["Hero_projects", "RichText_projects", "ListOfCards_projects"]
-    },
-    {
-      slug: "blog",
-      label: "blog",
-      metaTitle: "Marcello Luatti | CavLince",
-      metaDescription: "Marcello Luatti description",
-      metaImage: null,
-      componentIds: ["RichText_homepage"]
+      componentIds: ["RichText_projects", "ListOfCards_projects"]
     },
   ],
   components: [
@@ -36,26 +28,16 @@ const data = {
     {
       id: "RichText_homepage",
       component: "RichText",
-      text: "<h3>This website is under developement 🚁</h3>",
+      text: "<h2>Here you have the list of my last projects</h2>",
       background: theme.colors.secondary,
       color: theme.colors.primary,
       padder: "large",
       wrapper: "large",
     },
     {
-      id: "Hero_projects",
-      component: "Hero",
-      image: {
-        src: "https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg"
-      },
-      supertitle: "work",
-      title: "Projects",
-      subtitle: "Here I want to show a list of my work projects",
-    },
-    {
       id: "RichText_projects",
       component: "RichText",
-      text: "Here there is a list of my work projects",
+      text: "<h2>Here there is a list of my work projects</h2>",
       background: theme.colors.secondary,
       color: theme.colors.primary,
       padder: "large",
