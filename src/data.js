@@ -6,11 +6,20 @@ const data = {
       slug: "",
       label: "Marcello Luatti",
       hiddenLabel: true,
+      hiddenFooter: true,
       metaTitle: "Marcello Luatti | CavLince",
       metaDescription: "Marcello Luatti description",
       metaImage: null,
       hidden: true,
-      componentIds: ["R3F_homepage", "RichText_homepage", "ListOfCards_projects"]
+      componentIds: ["R3F_homepage"]
+    },
+    {
+      slug: "about",
+      label: "About",
+      metaTitle: "Marcello Luatti | About",
+      metaDescription: "List of About",
+      metaImage: null,
+      componentIds: []
     },
     {
       slug: "projects",
@@ -19,6 +28,14 @@ const data = {
       metaDescription: "List of Projects",
       metaImage: null,
       componentIds: ["RichText_projects", "ListOfCards_projects"]
+    },
+    {
+      slug: "blog",
+      label: "Blog",
+      metaTitle: "Marcello Luatti | Blog",
+      metaDescription: "List of Blog",
+      metaImage: null,
+      componentIds: []
     },
   ],
   components: [
