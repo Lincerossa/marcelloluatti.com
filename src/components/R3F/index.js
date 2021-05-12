@@ -19,7 +19,7 @@ const Model = (props) => {
   })
 
   return (
-    <group >
+    <group>
       <group ref={group} {...props} dispose={null} scale={0.4} position={props.position}>
         <mesh>
           <meshNormalMaterial  />
@@ -33,6 +33,7 @@ const Model = (props) => {
           color={hovered ? theme.colors.primary : "white"}
           textAlign="left"
           onClick={props.onClick}
+          onPointerDown={props.onClick}
           onPointerEnter={() => setHovered(true)}
           onPointerLeave={() => setHovered(false)} 
         >
