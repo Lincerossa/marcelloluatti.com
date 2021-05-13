@@ -83,9 +83,17 @@ export const MenuItem = styled.div`
   font-weight: 400;
   line-height: 1;
   letter-spacing: .1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: relative;
-  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 768px){
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+
+  
   a {
     color: ${props => props.isActive ? props.theme.colors.primary : (props.inverted ? "white" : "black")} !important;
     &:hover{
