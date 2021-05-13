@@ -185,6 +185,7 @@ const data = {
     },
     {
       id: "Hero_supermoney",
+      component: "Hero",
       image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935554/marcelloluatti.com/Screenshot_2021-05-13_at_21.52.16_cmrbqe.png"} ,
       supertitle: "Product",
       title: "Supermoney",
