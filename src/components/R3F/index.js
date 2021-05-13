@@ -25,13 +25,13 @@ const Model = (props) => {
   const { materials } = useGLTF("/test.gltf");
 
   useFrame(({clock}) => {
-    const time = clock.getElapsedTime() / 2
+    const time = clock.getElapsedTime() / 4
     if(time > props.timer) setActive(true)
     group.current.rotation.y = props.negative ? + time : - time
   })
 
   return (
-    <group>
+    <group onClick={props.onClick} onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)} onPointerDown={props.onClick}>
       <group ref={group} {...props} dispose={null} scale={0.4} position={props.position}>
         <mesh material={materials["Material.001"]}>
           <boxGeometry args={[1,2,1]} />
@@ -43,10 +43,10 @@ const Model = (props) => {
           cursor="pointer"
           color={hovered ? theme.colors.primary : "white"}
           textAlign="left"
-          onClick={props.onClick}
-          onPointerDown={props.onClick}
-          onPointerEnter={() => setHovered(true)}
-          onPointerLeave={() => setHovered(false)} 
+          
+          
+          
+          
         >
           {props.text}
         </Text>
@@ -63,8 +63,8 @@ const Lights = React.memo(() => {
 
   return (
     <>
-    {Array.from({length: 20}).map((e,i) => {
-      return <pointLight key={i} intensity={Rn(0,5)} color={i% 2 ? theme.colors.primary : theme.colors.secondary} position={[Rn(-100, 100), Rn(-100, 100), Rn(-100, 100)]}  />
+    {Array.from({length: 50}).map((e,i) => {
+      return <pointLight key={i} intensity={Rn(0,4)} color={i% 2 ? theme.colors.primary : theme.colors.secondary} position={[Rn(-200, 200), Rn(-200, 200), Rn(-200, 200)]}  />
     })}
     <ambientLight intensity={500} color={theme.colors.secondary}  position={[0, 100, 100]}  />
 
@@ -103,11 +103,11 @@ const R3F = () => {
           <Stars />
           {!surfed && <Surfing setSurfed={setSurfed} />}
           <Sphere  position={[0, 2.75, 0]} />
-          <Model position={[0, 2, 0]} text="About" timer={1} negative onClick={() => router.push("/about")} />
-          <Model position={[0, 1, 0]} text="Projects" timer={1.25} onClick={() => router.push("/projects")} />
-          <Model position={[0, 0, 0]} text="Blog" timer={1.5} negative onClick={() => router.push("/blog")}/>
-          <Model position={[0, -1, 0]} text="Hobby" timer={1.75} onClick={() => router.push("/hobby")} />
-          <Model position={[0, -2, 0]} text="Soon..." timer={2} negative />
+          <Model position={[0, 2, 0]} text="About" timer={.5} negative onClick={() => router.push("/about")} />
+          <Model position={[0, 1, 0]} text="Projects" timer={.65} onClick={() => router.push("/projects")} />
+          <Model position={[0, 0, 0]} text="Blog" timer={.8} negative onClick={() => router.push("/blog")}/>
+          <Model position={[0, -1, 0]} text="Hobby" timer={.95} onClick={() => router.push("/hobby")} />
+          <Model position={[0, -2, 0]} text="Soon..." timer={1.1} negative />
           <Sphere  position={[0, -2.75, 0]} />
           <Lights />
         </Suspense>
