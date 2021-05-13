@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { CloseOutlined,MenuOutlined } from '@ant-design/icons';
@@ -16,11 +16,20 @@ const Header = ({ routes, route, showMenu }) => {
 
   const shouldBeInverted =  (scrollPosition < innerHeight)
 
+  function handleCloseMenu(){
+    setMenuOpen(false)
+  }
+  
+  useEffect(() => {
+    router.events.on("routeChangeComplete", handleCloseMenu)
+    return () => router.events.off("routeChangeComplete", handleCloseMenu)
+  }, [])
+
   return (
     <S.Header scrollDirection={scrollDirection} isOpen={isOpen} inverted={shouldBeInverted}>
       <Wrapper size="large">
         <S.HeaderInner>
-          <S.Logo onClick={() => router.push("/")}>
+          <S.Logo onClick={() => route.push("/")}>
             <a>
               <C.Glitch text="MLua" >MLua</C.Glitch>
             </a>
@@ -32,7 +41,7 @@ const Header = ({ routes, route, showMenu }) => {
                   const {slug, label} = e || {}
                   const isActive = slug === route?.slug
                   return(
-                    <S.MenuItem key={slug} isActive={isActive} inverted={shouldBeInverted} onClick={() => router.push(`/${slug}`)}>
+                    <S.MenuItem key={slug} isActive={isActive} inverted={shouldBeInverted} onClick={() => route.push(`/${slug}`)}>
                       <a>{label}</a>
                     </S.MenuItem>
                   )
