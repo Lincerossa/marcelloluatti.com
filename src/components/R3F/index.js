@@ -6,6 +6,17 @@ import { OrbitControls, useGLTF, Text, Stars,  Plane} from "@react-three/drei";
 import * as S from './styles'
 import theme from '../../styles/theme';
 
+const Sphere = (props) => {
+
+  const { materials } = useGLTF("/test.gltf");
+  return (
+    <group position={props.position}>
+      <mesh material={materials["Material.001"]}>
+        <sphereBufferGeometry args={[.2, 20, 20]} />
+      </mesh>
+    </group>
+  )
+}
 const Model = (props) => {
   const [isActive, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
@@ -26,7 +37,7 @@ const Model = (props) => {
           <boxGeometry args={[1,2,1]} />
         </mesh>
       </group>
-      {isActive && <group {...props} dispose={null} position={[1, props.position[1], props.position[2]]}>
+      {isActive && <group {...props} dispose={null} position={[props.negative ? -1 : 1, props.position[1], props.position[2]]}>
         <Text
           fontSize={.3}
           cursor="pointer"
@@ -91,11 +102,13 @@ const R3F = () => {
           {surfed && <OrbitControls />}
           <Stars />
           {!surfed && <Surfing setSurfed={setSurfed} />}
+          <Sphere  position={[0, 2.75, 0]} />
           <Model position={[0, 2, 0]} text="About" timer={1} negative onClick={() => router.push("/about")} />
           <Model position={[0, 1, 0]} text="Projects" timer={1.25} onClick={() => router.push("/projects")} />
           <Model position={[0, 0, 0]} text="Blog" timer={1.5} negative onClick={() => router.push("/blog")}/>
-          <Model position={[0, -1, 0]} text="Lorem" timer={1.75} onClick={() => router.push("/lorem")}/>
-          <Model position={[0, -2, 0]} text="Ipsum" timer={2} negative onClick={() => router.push("/ipsum")}/>
+          <Model position={[0, -1, 0]} text="Hobby" timer={1.75} onClick={() => router.push("/hobby")} />
+          <Model position={[0, -2, 0]} text="Soon..." timer={2} negative />
+          <Sphere  position={[0, -2.75, 0]} />
           <Lights />
         </Suspense>
       </Canvas>

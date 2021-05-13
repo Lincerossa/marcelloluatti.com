@@ -7,7 +7,7 @@ const data = {
       label: "Marcello Luatti",
       hiddenLabel: true,
       hiddenFooter: true,
-      metaTitle: "Marcello Luatti | CavLince",
+      metaTitle: "Marcello Luatti | Lince",
       metaDescription: "Marcello Luatti description",
       metaImage: null,
       hidden: true,
