@@ -41,16 +41,6 @@ export const Logo = styled.div`
   @media (min-width:768px){
     width: 60px;
   }
-
-  svg {
-    fill: ${props => props.inverted ? "white" : "black"};
-  }
-
-  &:hover{
-    svg {
-      fill: ${props => props.theme.colors.primary};
-    }
-  }
 `
 
 export const Menu = styled.div`

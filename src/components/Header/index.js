@@ -19,7 +19,7 @@ const Header = ({ routes, route, showMenu }) => {
     <S.Header scrollDirection={scrollDirection} isOpen={isOpen} inverted={shouldBeInverted}>
       <Wrapper size="large">
         <S.HeaderInner>
-          <S.Logo inverted={shouldBeInverted}>
+          <S.Logo>
             <Link href="/">
               <a>
                 <C.Glitch text="MLua">MLua</C.Glitch>

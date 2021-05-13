@@ -66,14 +66,12 @@ export default createGlobalStyle`
     color: ${theme.colors.primary} !important;
     text-decoration: none;
     &:hover{
-      color: ${theme.colors.primary} !important;
-      
+      color: ${theme.colors.thirdary} !important;
     }
   }
   a > * {
     color: ${theme.colors.primary} !important;
-      color: ${theme.colors.primary} !important;
-    }
+  }
   
 
   ::selection {
