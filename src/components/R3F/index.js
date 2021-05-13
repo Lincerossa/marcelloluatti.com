@@ -42,11 +42,7 @@ const Model = (props) => {
           fontSize={.3}
           cursor="pointer"
           color={hovered ? theme.colors.primary : "white"}
-          textAlign="left"
-          
-          
-          
-          
+          textAlign="left" 
         >
           {props.text}
         </Text>
@@ -64,7 +60,7 @@ const Lights = React.memo(() => {
   return (
     <>
     {Array.from({length: 50}).map((e,i) => {
-      return <pointLight key={i} intensity={Rn(0,4)} color={i% 2 ? theme.colors.primary : theme.colors.secondary} position={[Rn(-200, 200), Rn(-200, 200), Rn(-200, 200)]}  />
+      return <pointLight key={i} intensity={Rn(0,4)} color={i% 5 ? theme.colors.secondary : theme.colors.primary} position={[Rn(-200, 200), Rn(-200, 200), Rn(-200, 200)]}  />
     })}
     <ambientLight intensity={500} color={theme.colors.secondary}  position={[0, 100, 100]}  />
 
