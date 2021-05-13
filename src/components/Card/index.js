@@ -1,11 +1,8 @@
 import React from 'react'
-
-import trimHtml from 'trim-html'
 import Image from '../Image'
 import * as S from './styles'
 
-const Card = ({ image, supertitle, title, tags, subtitle, content }) => {
-  const { html } = content && trimHtml(content, { limit: 75 });
+const Card = ({ image, supertitle, title, tags, subtitle }) => {
   return(
     <S.Card>
       <S.ImageWrapper>
@@ -23,7 +20,6 @@ const Card = ({ image, supertitle, title, tags, subtitle, content }) => {
           </S.TagsWrapper>
         }
         {subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
-        {html && <S.Content>{html}</S.Content>}
       </S.Description>
     </S.Card>
   )

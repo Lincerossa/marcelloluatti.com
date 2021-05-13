@@ -5,9 +5,10 @@ export const Card = styled.div`
   display: block;
   height: 100%;
   position: relative;
+  transition: .1s all;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,1)
+    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.25)
   }
 `
 
@@ -65,14 +66,9 @@ export const Subtitle = styled.div`
   margin-bottom: .5rem;
   text-transform: uppercase;
   font-size: .75rem;
-  color: gray ;
+  color: white;
 `
 
-export const Content = styled.div`
-  color: gray;
-  font-size: .75rem;
-  letter-spacing: .04em;
-`
 export const Description = styled.div`
   padding: 1rem;
   position: absolute;

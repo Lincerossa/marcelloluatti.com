@@ -45,7 +45,6 @@ const MainLabel = styled.div`
   background-color: ${props => props.theme.colors.secondary};
   display: flex;
   align-items: center;
-  border-bottom: 1px solid ${props => props.theme.colors.primary};
   font-size: 5rem;
   @media (min-width: 978px){
     font-size: 15rem;
