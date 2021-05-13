@@ -17,7 +17,7 @@ const data = {
       slug: "about",
       label: "About",
       metaTitle: "Marcello Luatti | About",
-      metaDescription: "List of About",
+      metaDescription: "Marcello Luatti | About",
       metaImage: null,
       componentIds: ["RichText_about"]
     },
@@ -25,7 +25,7 @@ const data = {
       slug: "projects",
       label: "Projects",
       metaTitle: "Marcello Luatti | Projects",
-      metaDescription: "List of Projects",
+      metaDescription: "Marcello Luatti | List of Projects",
       metaImage: null,
       componentIds: ["RichText_projects", "ListOfCards_projects"]
     },
@@ -33,9 +33,17 @@ const data = {
       slug: "blog",
       label: "Blog",
       metaTitle: "Marcello Luatti | Blog",
-      metaDescription: "List of Blog",
+      metaDescription: "Marcello Luatti | Blog",
       metaImage: null,
-      componentIds: []
+      componentIds: ["RichText_blog"]
+    },
+    {
+      slug: "hobby",
+      label: "Hobby",
+      metaTitle: "Marcello Luatti | Hobby",
+      metaDescription: "Marcello Luatti | Hobby",
+      metaImage: null,
+      componentIds: ["RichText_hobby"]
     },
   ],
   components: [
@@ -64,7 +72,25 @@ const data = {
     {
       id: "RichText_about",
       component: "RichText",
-      text: "<p>My name is Marcello Luatti. I'm a 30 year old Front End Engineer based on the <strong>Como Lake</strong> ☀️.</br> I describe myself as ....🤔 </br>  In my free time you can find me hiking 🛹 , at the gym 🏋️‍♂️, at the beach 🏖 or on playing guitar somewhere 🎸</p>",
+      text: "<p>My name is Marcello Luatti. I'm a 30 year old Front End Engineer based by the <strong>Lake Como</strong> ☀️.</br> I describe myself as ....🤔 </br>  In my free time you can find me hiking 🛹, at the gym 🏋️‍♂️, at the beach 🏖 or playing guitar somewhere 🎸</p>",
+      background: theme.colors.secondary,
+      color: "white",
+      padder: "large",
+      wrapper: "large",
+    },
+    {
+      id: "RichText_blog",
+      component: "RichText",
+      text: "<h2>Coming soon...⏰</h2>",
+      background: theme.colors.secondary,
+      color: "white",
+      padder: "large",
+      wrapper: "large",
+    },
+    {
+      id: "RichText_hobby",
+      component: "RichText",
+      text: "<h2>Coming soon...⏰</h2>",
       background: theme.colors.secondary,
       color: "white",
       padder: "large",
