@@ -30,6 +30,78 @@ const data = {
       componentIds: ["RichText_projects", "ListOfCards_projects"]
     },
     {
+      slug: "projects/bpmn",
+      label: "Bpmn",
+      metaTitle: "Marcello Luatti | Bpmn",
+      metaDescription: "Marcello Luatti | Bpmn Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_bpmn"]
+    },
+    {
+      slug: "projects/asutkin",
+      label: "Asutkin",
+      metaTitle: "Marcello Luatti | Asutkin",
+      metaDescription: "Marcello Luatti | Asutkin Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_asutkin"]
+    },
+    {
+      slug: "projects/godoo",
+      label: "Godoo",
+      metaTitle: "Marcello Luatti | Godoo",
+      metaDescription: "Marcello Luatti | Godoo Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_godoo"]
+    },
+    {
+      slug: "projects/salini",
+      label: "Salini",
+      metaTitle: "Marcello Luatti | Salini",
+      metaDescription: "Marcello Luatti | Salini Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_salini"]
+    },
+    {
+      slug: "projects/corneliani",
+      label: "Corneliani",
+      metaTitle: "Marcello Luatti | Corneliani",
+      metaDescription: "Marcello Luatti | Corneliani Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_corneliani"]
+    },
+    {
+      slug: "projects/fai",
+      label: "Fai",
+      metaTitle: "Marcello Luatti | Fai",
+      metaDescription: "Marcello Luatti | Fai Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_fai"]
+    },
+    {
+      slug: "projects/moleskine",
+      label: "Moleskine",
+      metaTitle: "Marcello Luatti | Moleskine",
+      metaDescription: "Marcello Luatti | Moleskine Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_moleskine"]
+    },
+    {
+      slug: "projects/supermoney",
+      label: "Supermoney",
+      metaTitle: "Marcello Luatti | Supermoney",
+      metaDescription: "Marcello Luatti | Supermoney Project",
+      metaImage: null,
+      hidden: true,
+      componentIds: ["Hero_supermoney"]
+    },
+    {
       slug: "blog",
       label: "Blog",
       metaTitle: "Marcello Luatti | Blog",
@@ -50,6 +122,74 @@ const data = {
     {
       id: "R3F_homepage",
       component: "R3F",
+    },
+    {
+      id: "Hero_bpmn",
+      component: "Hero",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png"} ,
+      supertitle: "dashboard | bpmn",
+      title: "Godoo bpmn",
+      subtitle: "Business Process Modeling Notation",
+      maintitle: "Bpmn title",
+    },
+    {
+      id: "Hero_asutkin",
+      component: "Hero",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935351/marcelloluatti.com/Screenshot_2021-05-13_at_21.46.57_lqx2wf.png"} ,
+      supertitle: "personal blog",
+      title: "Asutkin",
+      subtitle: "Personal blog for our hikings",
+    },
+    {
+      id: "Hero_godoo",
+      component: "Hero",
+      supertitle: "website",
+      title: "Godoo website",
+      tags: ["React",  "Styled-components", "Gatsby", "Pagebuilder"],
+      subtitle: "product website developed with gatsby + Pb",
+    },
+    {
+      id: "Hero_salini",
+      component: "Hero",
+      supertitle: "dashboard",
+      title: "Salini Impregilo",
+      tags: ["React", "Cra", "Styled-components", "Prisma"],
+      subtitle: "Complex management dashboard tool",
+    },
+    {
+      id: "Hero_corneliani",
+      component: "Hero",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934560/marcelloluatti.com/Screenshot_2021-05-13_at_21.35.07_g8q5by.png"} ,
+      supertitle: "ecommerce",
+      title: "Corneliani ecommerce",
+      tags: ["React", "Next", "Graphql", "Nodejs server"],
+      subtitle: "Really beautiful and fast ecommerce",
+    },
+    {
+      id: "Hero_fai",
+      component: "Hero",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934997/marcelloluatti.com/Screenshot_2021-05-13_at_21.42.21_ef54qh.png"} ,
+      supertitle: "istutuzionale",
+      title: "Fondoambiente",
+      tags: ["React", "Next", "Styled-components", "Aws"],
+      subtitle: "Huge and super beautiful project",
+    },
+    {
+      id: "Hero_moleskine",
+      component: "Hero",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934715/marcelloluatti.com/Screenshot_2021-05-13_at_21.37.58_r85ej1.png"} ,
+      supertitle: "blog",
+      title: "Moleskine blog",
+      tags: ["Scss", "Es6", "Webpack"],
+      subtitle: "Really nice company blog website",
+    },
+    {
+      id: "Hero_supermoney",
+      image:{src:"https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935554/marcelloluatti.com/Screenshot_2021-05-13_at_21.52.16_cmrbqe.png"} ,
+      supertitle: "Product",
+      title: "Supermoney",
+      tags: ["Es6", "Bem", "Webpack"],
+      subtitle: "Product website (comparative)",
     },
     {
       id: "RichText_homepage",
