@@ -19,6 +19,13 @@ const Header = ({ routes, route, showMenu }) => {
   function handleCloseMenu(){
     setMenuOpen(false)
   }
+
+  function handleChangeRoute(slug){
+    router.push(
+      '[...dynamic]',
+      `/${slug}`,
+    );
+  }
   useEffect(() => {
     router.events.on("routeChangeComplete", handleCloseMenu)
     return () => router.events.off("routeChangeComplete", handleCloseMenu)
@@ -40,10 +47,8 @@ const Header = ({ routes, route, showMenu }) => {
               {
                 routes?.filter(e => !e.hidden).map(({slug, label}) => {
                   return(
-                    <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted}>
-                      <Link href={`/${slug}`} as={`/${slug}`}>
-                        <a>{label}</a>
-                      </Link>
+                    <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted} onClick={()=> handleChangeRoute(slug)}>
+                     <a> {label}</a>
                     </S.MenuItem>
                   )
                 })
