@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Glitch = styled.div`
   line-height: 1;
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     position:absolute;
     top: 50%;
@@ -25,10 +25,12 @@ export const Glitch = styled.div`
     }
     &:after {
       color: #0ff;
+      
       z-index: -2;
     }
     &:before {
       color: #bf1650;
+      transform: translate(-2px, 2px);
       z-index: -1;
     }
     &:hover {
