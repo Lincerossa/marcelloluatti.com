@@ -19,6 +19,9 @@ const Header = ({ routes, route, showMenu }) => {
   function handleCloseMenu(){
     setMenuOpen(false)
   }
+  function handleToggleMenu(){
+    setMenuOpen(!isMenuOpen)
+  }
   useEffect(() => {
     router.events.on("routeChangeComplete", handleCloseMenu)
     return () => router.events.off("routeChangeComplete", handleCloseMenu)
@@ -50,7 +53,7 @@ const Header = ({ routes, route, showMenu }) => {
               }
               </S.MenuItems>
             </S.Menu>}
-          {showMenu && <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isMenuOpen)}>
+          {showMenu && <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={handleToggleMenu}>
             { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>}
         </S.HeaderInner>
       </Wrapper>
