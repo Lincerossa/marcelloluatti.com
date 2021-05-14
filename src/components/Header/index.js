@@ -16,14 +16,14 @@ const Header = ({ routes, route, showMenu }) => {
 
   const shouldBeInverted =  (scrollPosition < innerHeight)
 
-  function handleCloseMenu(){
-    setMenuOpen(false)
-  }
+  // function handleCloseMenu(){
+  //   setMenuOpen(false)
+  // }
   
-  useEffect(() => {
-    router.events.on("routeChangeComplete", handleCloseMenu)
-    return () => router.events.off("routeChangeComplete", handleCloseMenu)
-  }, [])
+  // useEffect(() => {
+  //   router.events.on("routeChangeComplete", handleCloseMenu)
+  //   return () => router.events.off("routeChangeComplete", handleCloseMenu)
+  // }, [])
 
   return (
     <S.Header scrollDirection={scrollDirection} isOpen={isOpen} inverted={shouldBeInverted}>
@@ -57,4 +57,4 @@ const Header = ({ routes, route, showMenu }) => {
   )
 }
 
-export default React.memo(Header)
+export default Header
