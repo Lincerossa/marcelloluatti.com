@@ -16,9 +16,9 @@ const Footer = (props) => (
           </Link>
         </S.Logo>
         <S.ExternalLinks>
-          <a href="https://github.com/Lincerossa" target="_blank">Github</a>
+          {/* <a href="https://github.com/Lincerossa" target="_blank">Github</a>
           <a href="https://twitter.com/cav_lince" target="_blank">Twitter</a>
-          <a href="https://www.linkedin.com/in/marcello-luatti/" target="_blank">Linkedin</a>
+          <a href="https://www.linkedin.com/in/marcello-luatti/" target="_blank">Linkedin</a> */}
         </S.ExternalLinks>
       </S.FooterInner>
     </Wrapper>
