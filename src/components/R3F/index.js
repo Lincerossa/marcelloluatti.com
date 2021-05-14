@@ -97,7 +97,7 @@ const R3F = ({items}) => {
           <Stars />
           {!surfed && <Surfing setSurfed={setSurfed} />}
           <Sphere  position={[0, 3, 0]} />
-          {items.map(({text, slug}, i) => (<Totem position={[0, 2 - i, 0]} text={text} timer={.5 + i*.15} negative={i % 2} onClick={() => slug && router.push(slug)} />))}
+          {items.map(({text, slug}, i) => (<Totem key={slug} position={[0, 2 - i, 0]} text={text} timer={.5 + i*.15} negative={i % 2} onClick={() => slug && router.push(slug)} />))}
           <Sphere  position={[0, 2-items.length, 0]} />
           <Lights />
         </Suspense>

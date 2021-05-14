@@ -19,13 +19,6 @@ const Header = ({ routes, route, showMenu }) => {
   function handleCloseMenu(){
     setMenuOpen(false)
   }
-
-  function handleChangeRoute(slug){
-    router.push(
-      '[...dynamic]',
-      `/${slug}`,
-    );
-  }
   useEffect(() => {
     router.events.on("routeChangeComplete", handleCloseMenu)
     return () => router.events.off("routeChangeComplete", handleCloseMenu)
@@ -42,21 +35,23 @@ const Header = ({ routes, route, showMenu }) => {
               </a>
             </Link>
           </S.Logo>
-          {showMenu && <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
+          <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
             <S.MenuItems>
               {
                 routes?.filter(e => !e.hidden).map(({slug, label}) => {
                   return(
-                    <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted} onClick={()=> handleChangeRoute(slug)}>
-                     <a> {label}</a>
+                    <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted}>
+                      <Link href={`/${slug}`}>
+                        <a>{label}</a>
+                      </Link>
                     </S.MenuItem>
                   )
                 })
               }
               </S.MenuItems>
-            </S.Menu>}
-          {showMenu && <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isMenuOpen)}>
-            { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>}
+            </S.Menu>
+          <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isMenuOpen)}>
+            { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>
         </S.HeaderInner>
       </Wrapper>
     </S.Header>

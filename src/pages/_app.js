@@ -29,7 +29,7 @@ function App({ Component, pageProps }) {
           <Header route={route} routes={routes} showMenu={!hiddenLabel} />
           {!hiddenLabel && label && <MainLabel><Wrapper size="large"><C.Glitch text={label}>{label}</C.Glitch></Wrapper></MainLabel>}
           <Component {...pageProps} />
-          {!hiddenFooter && <Footer />}
+          <Footer />
         </Main>
       </ThemeProvider>
     </>
