@@ -17,7 +17,7 @@ export const Header = styled.div`
     ? 'transform: translate(0,-100%);'
     :'transform: translate(0,0%);'
   }
-  ${props => props.isOpen && `
+  ${props => props.isMenuOpen && `
     bottom: 0;
   `}
 
@@ -44,7 +44,7 @@ export const Logo = styled.div`
 `
 
 export const Menu = styled.div`
-  display: ${props => props.isOpen ? `
+  display: ${props => props.isMenuOpen ? `
     display: block;
     position: fixed;
     top: 0;
@@ -114,7 +114,7 @@ export const Hamburger = styled.div`
   color: white;
   font-size: 1.5rem;
   color: ${props => props.inverted ? "white" : props.theme.colors.primary };
-  ${props => props.isOpen && "color: white"};
+  ${props => props.isMenuOpen && "color: white"};
   @media (min-width: 768px){
     display: none;
   }
