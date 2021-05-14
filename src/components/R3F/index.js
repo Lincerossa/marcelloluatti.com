@@ -17,7 +17,7 @@ const Sphere = (props) => {
     </group>
   )
 }
-const Model = (props) => {
+const Totem = (props) => {
   const [isActive, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
   const group = useRef();
@@ -68,12 +68,12 @@ const Lights = React.memo(() => {
 })
 
 function Surfing({setSurfed}) {
-  useFrame(({ clock, camera }) => {
+  useFrame(({ camera }) => {
     if(camera.position.z > 5) {
-      camera.position.z = MathUtils.lerp(camera.position.z, 4, 0.06)
+      camera.position.z = MathUtils.lerp(camera.position.z, 4, 0.05)
     }
     if(camera.position.y > 0) {
-      camera.position.y = MathUtils.lerp(camera.position.y, -1, 0.06)
+      camera.position.y = MathUtils.lerp(camera.position.y, -1, 0.05)
     }
 
     if( (camera.position.y <= 0) && (camera.position.z <= 5)) {
@@ -85,9 +85,7 @@ function Surfing({setSurfed}) {
   })
   return null
 }
-
-
-const R3F = () => {
+const R3F = ({items}) => {
   const router = useRouter()
   const [surfed, setSurfed] = useState(null)
 
@@ -98,13 +96,9 @@ const R3F = () => {
           {surfed && <OrbitControls />}
           <Stars />
           {!surfed && <Surfing setSurfed={setSurfed} />}
-          <Sphere  position={[0, 2.75, 0]} />
-          <Model position={[0, 2, 0]} text="About" timer={.5} negative onClick={() => router.push("/about")} />
-          <Model position={[0, 1, 0]} text="Projects" timer={.65} onClick={() => router.push("/projects")} />
-          <Model position={[0, 0, 0]} text="Blog" timer={.8} negative onClick={() => router.push("/blog")}/>
-          <Model position={[0, -1, 0]} text="Hobby" timer={.95} onClick={() => router.push("/hobby")} />
-          <Model position={[0, -2, 0]} text="Soon..." timer={1.1} negative />
-          <Sphere  position={[0, -2.75, 0]} />
+          <Sphere  position={[0, 3, 0]} />
+          {items.map(({text, slug}, i) => (<Totem position={[0, 2 - i, 0]} text={text} timer={.5 + i*.15} negative={i % 2} onClick={() => slug && router.push(slug)} />))}
+          <Sphere  position={[0, 2-items.length, 0]} />
           <Lights />
         </Suspense>
       </Canvas>

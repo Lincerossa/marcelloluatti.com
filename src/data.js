@@ -122,6 +122,13 @@ const data = {
     {
       id: "R3F_homepage",
       component: "R3F",
+      items: [
+        {text:"About", slug:"/about"},
+        {text:"Projects", slug:"/projects"},
+        {text:"Blog", slug:"/blog"},
+        {text:"Hobby", slug:"/hobby"},
+        {text:"Soon..."}
+      ]
     },
     {
       id: "Hero_bpmn",
