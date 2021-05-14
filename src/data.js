@@ -112,10 +112,12 @@ const data = {
     {
       slug: "hobby",
       label: "Hobby",
+      hiddenLabel: true,
+      hiddenFooter: true,
       metaTitle: "Marcello Luatti | Hobby",
       metaDescription: "Marcello Luatti | Hobby",
       metaImage: null,
-      componentIds: ["RichText_hobby"]
+      componentIds: ["R3F_homepage"]
     },
   ],
   components: [
