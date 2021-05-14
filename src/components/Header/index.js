@@ -41,7 +41,7 @@ const Header = ({ routes, route, showMenu }) => {
                 routes?.filter(e => !e.hidden).map(({slug, label}) => {
                   return(
                     <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted}>
-                      <Link href={`/${slug}`}>
+                      <Link href={`/${slug}`} as={`/${slug}`}>
                         <a>{label}</a>
                       </Link>
                     </S.MenuItem>
