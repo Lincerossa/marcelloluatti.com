@@ -35,7 +35,7 @@ const Header = ({ routes, route, showMenu }) => {
               </a>
             </Link>
           </S.Logo>
-          <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
+          {showMenu && <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
             <S.MenuItems>
               {
                 routes?.filter(e => !e.hidden).map(({slug, label}) => {
@@ -49,9 +49,9 @@ const Header = ({ routes, route, showMenu }) => {
                 })
               }
               </S.MenuItems>
-            </S.Menu>
-          <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isMenuOpen)}>
-            { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>
+            </S.Menu>}
+          {showMenu && <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={() => setMenuOpen(!isMenuOpen)}>
+            { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}</S.Hamburger>}
         </S.HeaderInner>
       </Wrapper>
     </S.Header>
