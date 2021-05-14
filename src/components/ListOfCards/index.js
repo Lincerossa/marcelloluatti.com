@@ -8,7 +8,7 @@ import * as S from './styles'
 const ListOfCards = ({items}) => {
   return (
     <List columns={3} >
-      {items.map(item => <Link key={item.slug} href={`/${item.slug}`} disabled={!item.slug}><a><S.ListItem> <Card {...item} /></S.ListItem></a></Link>)}
+      {items.map(item => <Link key={item.slug} href="/[...dynamic]" as={`/${item.slug}`} disabled={!item.slug}><a><S.ListItem> <Card {...item} /></S.ListItem></a></Link>)}
     </List>
   )
 }

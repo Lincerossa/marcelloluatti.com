@@ -29,7 +29,7 @@ const Header = ({ routes, route, showMenu }) => {
       <Wrapper size="large">
         <S.HeaderInner>
           <S.Logo>
-            <Link href="/">
+            <Link href="/" as="/">
               <a>
                 <C.Glitch text="MLua">MLua</C.Glitch>
               </a>
@@ -41,7 +41,7 @@ const Header = ({ routes, route, showMenu }) => {
                 routes?.filter(e => !e.hidden).map(({slug, label}) => {
                   return(
                     <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted}>
-                      <Link href={`/${slug}`}>
+                      <Link href="/[...dynamic]" as={`/${slug}`}>
                         <a>{label}</a>
                       </Link>
                     </S.MenuItem>

@@ -9,7 +9,7 @@ const Footer = (props) => (
     <Wrapper size="large">
       <S.FooterInner>
         <S.Logo>
-          <Link href="/">
+          <Link href="/" as="/">
             <a>
               <C.Glitch text="MLua">MLua</C.Glitch>
             </a>
