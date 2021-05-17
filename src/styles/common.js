@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const Glitch = styled.div`
   line-height: 1;
@@ -15,7 +15,7 @@ export const Glitch = styled.div`
     &:before,
     &:after{
       display: block;
-      content: "${props => props.text}";
+      content: "${(props) => props.text}";
       position: absolute;
       top: 0;
       left: 0;
@@ -71,4 +71,4 @@ export const Glitch = styled.div`
           transform: translate(0)
       }
   }
-`
+`;

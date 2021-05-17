@@ -1,9 +1,9 @@
-import React from "react"
-import * as C from "../components"
+import React from 'react'
+import * as C from '../components'
 import * as M from '../components/Maybe'
 import { routes, components } from '../data'
 
-const App = ({ components }) => components?.map(({id, component ,...props}) => {
+const App = ({ components }) => components?.map(({ id, component, ...props }) => {
   const Component = C[component]
   return (
     <M.WithBackground {...props} key={id}>
@@ -17,12 +17,12 @@ const App = ({ components }) => components?.map(({id, component ,...props}) => {
 })
 
 export async function getStaticProps() {
-  const route = routes.find((e) => e.slug === "")
+  const route = routes.find((e) => e.slug === '')
   return {
     props: {
       route,
-      components: route.componentIds.map(component => components.find(({id}) => id === component))
-    }
+      components: route.componentIds.map((component) => components.find(({ id }) => id === component)),
+    },
   }
 }
 

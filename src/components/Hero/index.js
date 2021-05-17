@@ -17,5 +17,4 @@ const Hero = ({ image, maintitle, title, subtitle, supertitle }) => (
   </S.HeroWrapper>
 )
 
-
 export default Hero

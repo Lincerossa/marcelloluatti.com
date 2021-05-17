@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 import Wrapper from '../Wrapper'
+
 const PostHero = ({ media, supertitle, title, subtitle }) => (
   <S.MediaWrapper>
     <S.Media src={media && media.url} />
@@ -14,6 +15,5 @@ const PostHero = ({ media, supertitle, title, subtitle }) => (
 
   </S.MediaWrapper>
 )
-
 
 export default PostHero

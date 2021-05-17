@@ -12,7 +12,6 @@ export const Card = styled.div`
   }
 `
 
-
 export const ImageWrapper = styled.div`
   position: relative;
   padding-top: 100%;
@@ -48,7 +47,7 @@ export const Media = styled.img`
 
 export const Supertitle = styled.div`
   font-family: sans-serif;
-  color: ${ props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   font-size: .875rem;
   text-transform: uppercase;
   margin-bottom: .5rem;
@@ -77,7 +76,6 @@ export const Description = styled.div`
   z-index: 1;
 `
 
-
 export const TagsWrapper = styled.div`
   display: flex;
   margin-bottom: .5rem;
@@ -86,7 +84,7 @@ export const TagsWrapper = styled.div`
 `
 export const Tag = styled.div`
   border-radius: 4px;
-  background: ${props => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.primary};
   color: white;
   font-size: .656rem;
   padding: .25rem .5rem;

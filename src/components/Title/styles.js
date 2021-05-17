@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Wrapper = styled.div`
   margin-bottom: 3rem;
   @media (min-width:768px){
@@ -23,14 +22,14 @@ export const Title = styled.h2`
   &:before {
     content:"";
     height: .2rem;
-    background-color: ${props => props.color || props.theme.colors.primary};
+    background-color: ${(props) => props.color || props.theme.colors.primary};
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%,0);
     width: 3rem;
   }
-  ${props => props.noSegment && `
+  ${(props) => props.noSegment && `
   
     &:before{
       content:"";
