@@ -1,13 +1,16 @@
 import React from 'react'
-import * as S from './styles.js'
+import * as S from './styles'
 
 const RichText = ({ text, children }) => {
+  if (text) {
+    return (
+      <S.RichText
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    )
+  }
 
-  if(text) return (<S.RichText
-    dangerouslySetInnerHTML={{__html: text}}
-  />)
-
-  if(children) return <S.RichText>{children}</S.RichText>
+  if (children) return <S.RichText>{children}</S.RichText>
 
   return null
 }

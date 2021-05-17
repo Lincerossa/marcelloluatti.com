@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const ListItem = styled.div`
   transition: .4s all;
   img {

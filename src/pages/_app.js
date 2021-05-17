@@ -1,16 +1,18 @@
-import React from "react"
-import Head from 'next/head'
-import styled, { ThemeProvider } from 'styled-components'
+import React from 'react';
+import Head from 'next/head';
+import styled, { ThemeProvider } from 'styled-components';
 import 'antd/dist/antd.css';
-import theme from '../styles/theme'
-import * as C from '../styles/common'
-import GlobalStyle from '../styles/global'
-import {Footer, Header, Wrapper } from '../../src/components'
-import { routes } from '../data'
+import theme from '../styles/theme';
+import * as C from '../styles/common';
+import GlobalStyle from '../styles/global';
+import { Footer, Header, Wrapper } from '../components';
+import { routes } from '../data';
 
 function App({ Component, pageProps }) {
-  const { route } = pageProps
-  const { metaTitle, metaDescription, label, hiddenLabel, hiddenFooter } = route || {}
+  const { route } = pageProps;
+  const {
+    metaTitle, metaDescription, label, hiddenLabel, hiddenFooter,
+  } = route || {};
   return (
     <>
       <Head>
@@ -22,7 +24,7 @@ function App({ Component, pageProps }) {
         <meta property="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta property="og:type" content="website" />
         <link defer async href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500&display=swap" as="font" />
-       </Head>
+      </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
@@ -33,22 +35,22 @@ function App({ Component, pageProps }) {
         </Main>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
 const Main = styled.main`
   min-height: 100vh;
-`
+`;
 const MainLabel = styled.div`
   height: 100vh;
   position: relative;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.secondary};
   display: flex;
   align-items: center;
   font-size: 5rem;
   @media (min-width: 978px){
     font-size: 15rem;
   }
-`
+`;
 
-export default App
+export default App;

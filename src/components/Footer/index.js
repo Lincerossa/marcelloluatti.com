@@ -1,10 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 import * as S from './styles'
 import Wrapper from '../Wrapper'
-import Link from 'next/link'
-import * as C from './../../styles/common'
+import * as C from '../../styles/common'
 
-const Footer = (props) => (
+const Footer = () => (
   <S.Footer>
     <Wrapper size="large">
       <S.FooterInner>
@@ -16,14 +16,13 @@ const Footer = (props) => (
           </Link>
         </S.Logo>
         <S.ExternalLinks>
-          <a href="https://github.com/Lincerossa" target="_blank">Github</a>
-          <a href="https://twitter.com/cav_lince" target="_blank">Twitter</a>
-          <a href="https://www.linkedin.com/in/marcello-luatti/" target="_blank">Linkedin</a>
+          <a href="https://github.com/Lincerossa" target="_blank" rel="noreferrer">Github</a>
+          <a href="https://twitter.com/cav_lince" target="_blank" rel="noreferrer">Twitter</a>
+          <a href="https://www.linkedin.com/in/marcello-luatti/" target="_blank" rel="noreferrer">Linkedin</a>
         </S.ExternalLinks>
       </S.FooterInner>
     </Wrapper>
   </S.Footer>
 )
-
 
 export default Footer

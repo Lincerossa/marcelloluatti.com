@@ -10,5 +10,4 @@ const Background = ({ background, color, children }) => (
   </S.Background>
 )
 
-
 export default Background

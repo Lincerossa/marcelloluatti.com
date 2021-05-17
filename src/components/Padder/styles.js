@@ -7,5 +7,5 @@ const SIZES = {
 }
 
 export const Padder = styled.div`
-  padding: ${props => `${SIZES[props.size]}rem 0`};
+  padding: ${(props) => `${SIZES[props.size]}rem 0`};
 `

@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 export const HeroWrapper = styled.div`
   position: relative;
   height: 100vh;
@@ -14,8 +12,6 @@ export const HeroWrapper = styled.div`
   }
 `
 
-
-
 export const HeroHeader = styled.div`
   position: absolute;
   bottom: 3rem;
@@ -23,7 +19,6 @@ export const HeroHeader = styled.div`
   right: 0;
   z-index:1;
 `
-
 
 export const Maintitle = styled.div`
   font-family: sans-serif;
@@ -35,10 +30,9 @@ export const Maintitle = styled.div`
   top: 15%;
   left: 50%;
   transform: translate(-50%,-50%);
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
 
 `
-
 
 export const Supertitle = styled.div`
   text-transform: uppercase;
@@ -52,7 +46,6 @@ export const Title = styled.div`
   margin-bottom: 1rem;
   color: white;
 `
-
 
 export const Subtitle = styled.div`
   text-transform: uppercase;

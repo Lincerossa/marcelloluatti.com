@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Header = styled.div`
   position: fixed;
   top: 0;
@@ -11,13 +10,13 @@ export const Header = styled.div`
   transition: .2s  all;
   transition-timing-function: ease-in;
   justify-content: space-between;
-  background: ${props => props.inverted ? 'transparent' : "rgb(255,255,255,.9)"};
-  box-shadow: ${props => props.inverted ? "none" : "0px 2px 8px rgba(0,0,0,0.15)"};
-  ${props => props.scrollDirection === "down"
+  background: ${(props) => (props.inverted ? 'transparent' : 'rgb(255,255,255,.9)')};
+  box-shadow: ${(props) => (props.inverted ? 'none' : '0px 2px 8px rgba(0,0,0,0.15)')};
+  ${(props) => (props.scrollDirection === 'down'
     ? 'transform: translate(0,-100%);'
-    :'transform: translate(0,0%);'
-  }
-  ${props => props.isMenuOpen && `
+    : 'transform: translate(0,0%);')
+}
+  ${(props) => props.isMenuOpen && `
     bottom: 0;
   `}
 
@@ -44,7 +43,7 @@ export const Logo = styled.div`
 `
 
 export const Menu = styled.div`
-  display: ${props => props.isMenuOpen ? `
+  display: ${(props) => (props.isMenuOpen ? `
     display: block;
     position: fixed;
     top: 0;
@@ -52,7 +51,7 @@ export const Menu = styled.div`
     left: 0;
     right: 0;
     background: ${props.theme.colors.secondary};
-  ` : 'none'};
+  ` : 'none')};
 
   @media (min-width: 768px){
     display: block;
@@ -95,9 +94,9 @@ export const MenuItem = styled.div`
 
   
   a {
-    color: ${props => props.isActive ? props.theme.colors.primary : (props.inverted ? "white" : "black")} !important;
+    color: ${(props) => (props.isActive ? props.theme.colors.primary : (props.inverted ? 'white' : 'black'))} !important;
     &:hover{
-      color: ${props => props.theme.colors.primary} !important;
+      color: ${(props) => props.theme.colors.primary} !important;
     }
   }
 
@@ -113,11 +112,9 @@ export const Hamburger = styled.div`
   right: 1rem;
   color: white;
   font-size: 1.5rem;
-  color: ${props => props.inverted ? "white" : props.theme.colors.primary };
-  ${props => props.isMenuOpen && "color: white"};
+  color: ${(props) => (props.inverted ? 'white' : props.theme.colors.primary)};
+  ${(props) => props.isMenuOpen && 'color: white'};
   @media (min-width: 768px){
     display: none;
   }
 `
-
-

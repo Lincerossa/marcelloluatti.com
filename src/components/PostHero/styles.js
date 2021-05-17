@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 export const MediaWrapper = styled.div`
   height: calc(100vh - 2.5rem);
   position: relative;
@@ -30,10 +28,9 @@ export const MediaHeader = styled.div`
   bottom: 3rem;
 `
 
-
 export const Supertitle = styled.div`
   font-family: sans-serif;
-  color: ${ props => props.theme.colors.orange};
+  color: ${(props) => props.theme.colors.orange};
   font-size: 1.25rem;
   text-transform: uppercase;
   margin-bottom: 1.5rem;

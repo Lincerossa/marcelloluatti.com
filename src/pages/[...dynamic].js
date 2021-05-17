@@ -1,9 +1,9 @@
-import React from "react"
-import * as C from "../components"
+import React from 'react'
+import * as C from '../components'
 import * as M from '../components/Maybe'
 import { routes, components } from '../data'
 
-const App = ({ components }) => components?.map(({id, component ,...props}) => {
+const App = ({ components }) => components?.map(({ id, component, ...props }) => {
   const Component = C[component]
   return (
     <M.WithBackground {...props} key={id}>
@@ -18,20 +18,20 @@ const App = ({ components }) => components?.map(({id, component ,...props}) => {
 
 export async function getStaticPaths() {
   return {
-    paths: routes.filter((e) => e.slug !== "").map(({slug}) => ({params: {
-      dynamic: slug.split("/")
-    }})),
-    fallback: false
+    paths: routes.filter((e) => e.slug !== '').map(({ slug }) => ({ params: {
+      dynamic: slug.split('/'),
+    } })),
+    fallback: false,
   }
 }
 
-export async function getStaticProps({ params: {dynamic} }) {
-  const route = routes.find((e) => e.slug === dynamic.join("/"))
+export async function getStaticProps({ params: { dynamic } }) {
+  const route = routes.find((e) => e.slug === dynamic.join('/'))
   return {
     props: {
       route,
-      components: route.componentIds.map(component => components.find(({id}) => id === component))
-    }
+      components: route.componentIds.map((component) => components.find(({ id }) => id === component)),
+    },
   }
 }
 
