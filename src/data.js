@@ -5,8 +5,7 @@ const data = {
     {
       slug: '',
       label: 'Marcello Luatti',
-      hiddenLabel: true,
-      hiddenFooter: true,
+      layout: 'full',
       metaTitle: 'Marcello Luatti | Lince',
       metaDescription: 'Marcello Luatti description',
       metaImage: null,
