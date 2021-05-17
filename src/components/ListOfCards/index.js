@@ -12,7 +12,7 @@ const ListOfCards = ({ items }) => (
         <a>
           <S.ListItem>
             {' '}
-            <Card {...item} />
+            <Card {...item} layout="auto" />
           </S.ListItem>
         </a>
       </Link>

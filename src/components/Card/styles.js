@@ -7,14 +7,13 @@ export const Card = styled.div`
   position: relative;
   transition: .1s all;
   &:hover {
-    cursor: pointer;
     box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.25)
   }
 `
 
 export const ImageWrapper = styled.div`
   position: relative;
-  padding-top: 100%;
+
   overflow: hidden;
   :before{
     content: "";
@@ -27,14 +26,19 @@ export const ImageWrapper = styled.div`
     z-index: 1;
     background: linear-gradient(to top,rgba(0,0,0,.75),transparent);
   }
-  img {
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
-  }
+  ${(props) => props.layout === 'auto' && `
+    padding-top: 100%;
+    img {
+      position: absolute;
+      top:0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      object-fit: cover;
+    }
+  
+  `}
+
 `
 export const Media = styled.img`
   position: absolute;

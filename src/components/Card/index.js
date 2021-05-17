@@ -2,9 +2,9 @@ import React from 'react'
 import Image from '../Image'
 import * as S from './styles'
 
-const Card = ({ image, supertitle, title, tags, subtitle }) => (
+const Card = ({ image, supertitle, title, tags, subtitle, layout }) => (
   <S.Card>
-    <S.ImageWrapper>
+    <S.ImageWrapper layout={layout}>
       <Image image={image} />
     </S.ImageWrapper>
 
