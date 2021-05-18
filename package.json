@@ -4,10 +4,8 @@
   "version": "0.0.1",
   "author": "Marcello Luatti <marcelloluatti@gmail.com>",
   "dependencies": {
-    "@ant-design/icons": "^4.6.2",
     "@react-three/drei": "^4.3.3",
     "@react-three/fiber": "^6.1.2",
-    "antd": "^4.15.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "next": "^10.2.0",
     "prop-types": "^15.7.2",
