@@ -173,3 +173,22 @@ export const ExternalLinks = styled.div`
     align-items: center;
   }
 `
+
+export const MouseTracker = styled.div`
+  position: absolute;
+  border: 2px solid red;
+  height: 20px;
+  border-radius: 50%;
+  width: 20px;
+  transform: translate(-50%,-50%);
+  
+`
+export const MousePoint = styled.div`
+  position: fixed;
+  background-color: ${(props) => props.theme.colors.primary};
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translate(-50%,-50%);
+`

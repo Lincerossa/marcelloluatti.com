@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/router'
+import { useSpring, animated } from 'react-spring';
 import Logo from './logo.svg'
 import { useScrollDirection } from '../../hooks'
 import Wrapper from '../Wrapper'
@@ -9,12 +10,19 @@ import * as S from './styles'
 import * as C from '../../styles/common'
 
 const Layout = ({ children, label, layout, slug, routes }) => {
+  const mouseTracker = useRef()
+  const [mousePosition, setMousePosition] = useState()
+  const styles = useSpring({ from: { left: 0, top: 0 }, to: { left: mousePosition?.clientX, top: mousePosition?.clientY } })
   const { scrollDirection, scrollPosition } = useScrollDirection()
   const [isMenuOpen, setMenuOpen] = useState(null)
   const router = useRouter()
   const innerHeight = (typeof window !== 'undefined' && window.innerHeight) || 100
-
   const shouldBeInverted = (scrollPosition < innerHeight)
+
+  useEffect(() => {
+    window.addEventListener('mousemove', setMousePosition)
+    return () => window.removeEventListener('mousemove', setMousePosition)
+  }, [mouseTracker])
 
   function handleCloseMenu() {
     setMenuOpen(false)
@@ -86,6 +94,10 @@ const Layout = ({ children, label, layout, slug, routes }) => {
         </Wrapper>
       </S.Footer>
       )}
+      <S.MousePoint style={{ position: 'fixed', left: mousePosition?.clientX, top: mousePosition?.clientY }} />
+      <animated.div style={{ position: 'fixed', zIndex: 1, ...styles }} ref={mouseTracker}>
+        <S.MouseTracker />
+      </animated.div>
     </S.Main>
   )
 }
