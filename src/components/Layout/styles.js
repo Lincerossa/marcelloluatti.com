@@ -4,7 +4,7 @@ export const Main = styled.main`
   min-height: 100vh;
 `;
 export const MainLabel = styled.div`
-  height: 100vh;
+  height:75vh;
   position: relative;
   background-color: ${(props) => props.theme.colors.secondary};
   display: flex;
@@ -12,8 +12,30 @@ export const MainLabel = styled.div`
   font-size: 5rem;
   @media (min-width: 978px){
     font-size: 15rem;
+    height: 100vh;
   }
 `;
+
+export const Logo = styled.div`
+  width: 60px;
+  font-size: 2rem;
+  display: flex;
+
+  @media (min-width: 768px){
+    width: 90px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: .2s  all;
+  }
+  &:hover {
+    svg{
+      fill: ${(props) => props.theme.colors.primary};
+    }
+  }
+`
 
 export const Header = styled.div`
   position: fixed;
@@ -34,6 +56,22 @@ export const Header = styled.div`
   ${(props) => props.isMenuOpen && `
     bottom: 0;
   `}
+
+  a {
+    color: ${(props) => (props.inverted ? 'white' : props.theme.colors.secondary)} !important;
+    
+    &:hover{
+      color: ${(props) => props.theme.colors.primary} !important;
+    }
+  }
+
+  svg {
+    fill: ${(props) => (props.inverted ? 'white' : props.theme.colors.secondary)} !important;
+    
+    &:hover{
+      fill: ${(props) => props.theme.colors.primary} !important;
+    }
+  }
 
   @media (min-width: 768px){
     bottom: auto;
@@ -97,10 +135,11 @@ export const MenuItem = styled.div`
     margin-right: 2rem;
   }
   
-
-  
   a {
-    color: ${(props) => (props.isActive ? props.theme.colors.primary : 'white')} !important;
+    ${(props) => props.isActive && `
+      color: ${props.theme.colors.primary} !important;
+    `};
+    
     &:hover{
       color: ${(props) => props.theme.colors.primary} !important;
     }
@@ -114,10 +153,9 @@ export const MenuItem = styled.div`
 
 export const Hamburger = styled.div`
   position: absolute;
-  top: .7rem;
+  top: 1rem;
   right: 1rem;
-  color: white;
-  font-size: 1.5rem;
+  width: 25px;
   color: ${(props) => (props.inverted ? 'white' : props.theme.colors.primary)};
   ${(props) => props.isMenuOpen && 'color: white'};
   @media (min-width: 768px){
@@ -125,33 +163,12 @@ export const Hamburger = styled.div`
   }
 `
 
-export const Logo = styled.div`
-  width: 50px;
-  font-size: 2rem;
-  display: flex;
-
-  @media (min-width: 768px){
-    width: 90px;
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: white;
-    transition: .2s  all;
-  }
-  &:hover {
-    svg{
-      fill: ${(props) => props.theme.colors.primary};
-    }
-  }
-`
-
 export const Footer = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
   a {
-    color: white !important;
+    color: white;
     &:hover {
-      color: ${(props) => props.theme.colors.primary}  !important;;
+      color: ${(props) => props.theme.colors.primary};
     }
   }
 `
@@ -160,7 +177,6 @@ export const FooterInner = styled.div`
   padding: 1.5rem 0;
   display: flex;
   justify-content: space-between;
-
 `
 
 export const ExternalLinks = styled.div`
@@ -177,7 +193,7 @@ export const ExternalLinks = styled.div`
 export const MouseTracker = styled.div`
   @media (min-width: 768px){
     position: absolute;
-    border: 2px solid red;
+    border: 2px solid ${(props) => props.theme.colors.primary};
     height: 20px;
     border-radius: 50%;
     pointer-events: none;
@@ -195,7 +211,7 @@ export const MousePoint = styled.div`
     width: 10px;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 3;
     transform: translate(-50%,-50%);
   }
 `

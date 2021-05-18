@@ -1,28 +1,28 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/router'
 import { useSpring, animated } from 'react-spring';
 import Logo from './logo.svg'
+import Hamburger from './hamburger.svg'
+import Close from './close.svg'
 import { useScrollDirection } from '../../hooks'
 import Wrapper from '../Wrapper'
 import * as S from './styles'
+
 import * as C from '../../styles/common'
 
 const Layout = ({ children, label, layout, slug, routes }) => {
-  const mouseTracker = useRef()
-  const [mousePosition, setMousePosition] = useState()
-  const styles = useSpring({ from: { left: 0, top: 0 }, to: { left: mousePosition?.clientX, top: mousePosition?.clientY } })
+  const [{ clientX: left, clientY: top }, setMousePosition] = useState({ clientX: 0, clientY: 0 })
+  const styles = useSpring({ from: { left: 0, top: 0 }, to: { left, top } })
   const { scrollDirection, scrollPosition } = useScrollDirection()
   const [isMenuOpen, setMenuOpen] = useState(null)
   const router = useRouter()
-  const innerHeight = (typeof window !== 'undefined' && window.innerHeight) || 100
-  const shouldBeInverted = (scrollPosition < innerHeight)
+  const inverted = scrollPosition < 200
 
   useEffect(() => {
     window.addEventListener('mousemove', setMousePosition)
     return () => window.removeEventListener('mousemove', setMousePosition)
-  }, [mouseTracker])
+  }, [])
 
   function handleCloseMenu() {
     setMenuOpen(false)
@@ -37,7 +37,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
 
   return (
     <S.Main>
-      <S.Header scrollDirection={scrollDirection} isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
+      <S.Header scrollDirection={scrollDirection} isMenuOpen={isMenuOpen} inverted={inverted}>
         <Wrapper size="large">
           <S.HeaderInner>
             <Link href="/" as="/">
@@ -49,11 +49,11 @@ const Layout = ({ children, label, layout, slug, routes }) => {
             </Link>
             {layout !== 'full' && (
             <>
-              <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
+              <S.Menu isMenuOpen={isMenuOpen}>
                 <S.MenuItems>
                   {
                   routes?.filter((e) => !e.hidden).map((e) => (
-                    <S.MenuItem key={e.slug} isActive={e.slug === slug} inverted={shouldBeInverted}>
+                    <S.MenuItem key={e.slug} isActive={e.slug === slug}>
                       <Link href="/[...dynamic]" as={`/${e.slug}`}>
                         <a>{e.label}</a>
                       </Link>
@@ -63,8 +63,8 @@ const Layout = ({ children, label, layout, slug, routes }) => {
                 </S.MenuItems>
               </S.Menu>
 
-              <S.Hamburger isMenuOpen={isMenuOpen} inverted={shouldBeInverted} onClick={handleToggleMenu}>
-                { isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}
+              <S.Hamburger isMenuOpen={isMenuOpen} inverted={inverted} onClick={handleToggleMenu}>
+                { isMenuOpen ? <Close /> : <Hamburger />}
               </S.Hamburger>
             </>
             )}
@@ -94,8 +94,8 @@ const Layout = ({ children, label, layout, slug, routes }) => {
         </Wrapper>
       </S.Footer>
       )}
-      <S.MousePoint style={{ position: 'fixed', left: mousePosition?.clientX, top: mousePosition?.clientY }} />
-      <animated.div style={{ position: 'fixed', zIndex: 1, ...styles }} ref={mouseTracker}>
+      <S.MousePoint style={{ left, top }} />
+      <animated.div style={{ position: 'fixed', zIndex: 3, ...styles }}>
         <S.MouseTracker />
       </animated.div>
     </S.Main>
