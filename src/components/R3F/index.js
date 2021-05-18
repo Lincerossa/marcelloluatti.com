@@ -2,7 +2,7 @@ import React, { Suspense, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { MathUtils } from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Text, Stars, Plane } from '@react-three/drei';
+import { OrbitControls, useGLTF, Text, Stars } from '@react-three/drei';
 import * as S from './styles'
 import theme from '../../styles/theme';
 
