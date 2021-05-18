@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import 'antd/dist/antd.css';
 import theme from '../styles/theme';
 import GlobalStyle from '../styles/global';
 import { Layout } from '../components';
