@@ -11,18 +11,29 @@ import * as S from './styles'
 
 import * as C from '../../styles/common'
 
-const Layout = ({ children, label, layout, slug, routes }) => {
+const MagicMouse = React.memo(() => {
   const [{ clientX: left, clientY: top }, setMousePosition] = useState({ clientX: 0, clientY: 0 })
   const styles = useSpring({ from: { left: 0, top: 0 }, to: { left, top } })
-  const { scrollDirection, scrollPosition } = useScrollDirection()
-  const [isMenuOpen, setMenuOpen] = useState(null)
-  const router = useRouter()
-  const inverted = scrollPosition < 200
-
   useEffect(() => {
     window.addEventListener('mousemove', setMousePosition)
     return () => window.removeEventListener('mousemove', setMousePosition)
   }, [])
+
+  return (
+    <>
+      <S.MousePoint style={{ left, top }} />
+      <animated.div style={{ position: 'fixed', zIndex: 3, ...styles }}>
+        <S.MouseTracker />
+      </animated.div>
+    </>
+  )
+})
+
+const Layout = ({ children, label, layout, slug, routes }) => {
+  const { scrollDirection, scrollPosition } = useScrollDirection()
+  const [isMenuOpen, setMenuOpen] = useState(null)
+  const router = useRouter()
+  const inverted = scrollPosition < 200
 
   function handleCloseMenu() {
     setMenuOpen(false)
@@ -94,10 +105,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
         </Wrapper>
       </S.Footer>
       )}
-      <S.MousePoint style={{ left, top }} />
-      <animated.div style={{ position: 'fixed', zIndex: 3, ...styles }}>
-        <S.MouseTracker />
-      </animated.div>
+      <MagicMouse />
     </S.Main>
   )
 }

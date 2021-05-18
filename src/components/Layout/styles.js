@@ -153,7 +153,7 @@ export const MenuItem = styled.div`
 
 export const Hamburger = styled.div`
   position: absolute;
-  top: 1rem;
+  top: 1.25rem;
   right: 1rem;
   width: 25px;
   color: ${(props) => (props.inverted ? 'white' : props.theme.colors.primary)};
