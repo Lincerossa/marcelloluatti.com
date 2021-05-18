@@ -180,6 +180,7 @@ export const MouseTracker = styled.div`
     border: 2px solid red;
     height: 20px;
     border-radius: 50%;
+    pointer-events: none;
     width: 20px;
     transform: translate(-50%,-50%);
   }
@@ -193,6 +194,7 @@ export const MousePoint = styled.div`
     height: 10px;
     width: 10px;
     border-radius: 50%;
+    pointer-events: none;
     z-index: 1;
     transform: translate(-50%,-50%);
   }
