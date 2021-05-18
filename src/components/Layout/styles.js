@@ -96,10 +96,11 @@ export const MenuItem = styled.div`
     font-size: 1.5rem;
     margin-right: 2rem;
   }
+  
 
   
   a {
-    color: ${(props) => (props.isActive ? props.theme.colors.primary : (props.inverted ? 'white' : 'black'))} !important;
+    color: ${(props) => (props.isActive ? props.theme.colors.primary : 'white')} !important;
     &:hover{
       color: ${(props) => props.theme.colors.primary} !important;
     }
@@ -124,28 +125,44 @@ export const Hamburger = styled.div`
   }
 `
 
+export const Logo = styled.div`
+  width: 50px;
+  font-size: 2rem;
+  display: flex;
+
+  @media (min-width: 768px){
+    width: 90px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: .2s  all;
+  }
+  &:hover {
+    svg{
+      fill: ${(props) => props.theme.colors.primary};
+    }
+  }
+`
+
 export const Footer = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
-  color: ${(props) => props.theme.colors.primary};
-  border-top: 1px solid ${(props) => props.theme.colors.thirdary};
+  a {
+    color: white !important;
+    &:hover {
+      color: ${(props) => props.theme.colors.primary}  !important;;
+    }
+  }
 `
 
 export const FooterInner = styled.div`
   padding: 1.5rem 0;
   display: flex;
   justify-content: space-between;
+
 `
 
-export const Logo = styled.div`
-  width: 50px;
-  left: 1rem;
-  padding: 1rem 0;
-  font-size: 2rem;
-  position: relative;
-  @media (min-width:768px){
-    width: 60px;
-  }
-`
 export const ExternalLinks = styled.div`
   display: grid;
   grid-gap: 1rem;

@@ -6,7 +6,7 @@ export default createGlobalStyle`
   html, body {
     height: auto;
     font-size: 1rem;
-    color: ${theme.colors.black.primary};
+    color: black;
     margin: 0;
   }
 
