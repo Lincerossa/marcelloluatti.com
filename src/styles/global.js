@@ -6,8 +6,11 @@ export default createGlobalStyle`
   html, body {
     height: auto;
     font-size: 1rem;
-    color: ${theme.colors.black.primary};
+    color: black;
     margin: 0;
+    @media (min-width: 768px){
+      cursor: none;
+    }
   }
 
   strong {

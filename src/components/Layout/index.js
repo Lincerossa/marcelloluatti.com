@@ -1,19 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/router'
+import { useSpring, animated } from 'react-spring';
+import Logo from './logo.svg'
 import { useScrollDirection } from '../../hooks'
 import Wrapper from '../Wrapper'
 import * as S from './styles'
 import * as C from '../../styles/common'
 
-const Layout = ({ children, label, layout, route, routes }) => {
+const Layout = ({ children, label, layout, slug, routes }) => {
+  const mouseTracker = useRef()
+  const [mousePosition, setMousePosition] = useState()
+  const styles = useSpring({ from: { left: 0, top: 0 }, to: { left: mousePosition?.clientX, top: mousePosition?.clientY } })
   const { scrollDirection, scrollPosition } = useScrollDirection()
   const [isMenuOpen, setMenuOpen] = useState(null)
   const router = useRouter()
   const innerHeight = (typeof window !== 'undefined' && window.innerHeight) || 100
-
   const shouldBeInverted = (scrollPosition < innerHeight)
+
+  useEffect(() => {
+    window.addEventListener('mousemove', setMousePosition)
+    return () => window.removeEventListener('mousemove', setMousePosition)
+  }, [mouseTracker])
 
   function handleCloseMenu() {
     setMenuOpen(false)
@@ -31,22 +40,22 @@ const Layout = ({ children, label, layout, route, routes }) => {
       <S.Header scrollDirection={scrollDirection} isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
         <Wrapper size="large">
           <S.HeaderInner>
-            <S.Logo>
-              <Link href="/" as="/">
-                <a>
-                  <C.Glitch text="MLua">MLua</C.Glitch>
-                </a>
-              </Link>
-            </S.Logo>
+            <Link href="/" as="/">
+              <a>
+                <S.Logo>
+                  <Logo />
+                </S.Logo>
+              </a>
+            </Link>
             {layout !== 'full' && (
             <>
               <S.Menu isMenuOpen={isMenuOpen} inverted={shouldBeInverted}>
                 <S.MenuItems>
                   {
-                  routes?.filter((e) => !e.hidden).map(({ slug, label }) => (
-                    <S.MenuItem key={slug} isActive={slug === route?.slug} inverted={shouldBeInverted}>
-                      <Link href="/[...dynamic]" as={`/${slug}`}>
-                        <a>{label}</a>
+                  routes?.filter((e) => !e.hidden).map((e) => (
+                    <S.MenuItem key={e.slug} isActive={e.slug === slug} inverted={shouldBeInverted}>
+                      <Link href="/[...dynamic]" as={`/${e.slug}`}>
+                        <a>{e.label}</a>
                       </Link>
                     </S.MenuItem>
                   ))
@@ -69,13 +78,13 @@ const Layout = ({ children, label, layout, route, routes }) => {
       <S.Footer>
         <Wrapper size="large">
           <S.FooterInner>
-            <S.Logo>
-              <Link href="/" as="/">
-                <a>
-                  <C.Glitch text="MLua">MLua</C.Glitch>
-                </a>
-              </Link>
-            </S.Logo>
+            <Link href="/" as="/">
+              <a>
+                <S.Logo>
+                  <Logo />
+                </S.Logo>
+              </a>
+            </Link>
             <S.ExternalLinks>
               <a href="https://github.com/Lincerossa" target="_blank" rel="noreferrer">Github</a>
               <a href="https://twitter.com/cav_lince" target="_blank" rel="noreferrer">Twitter</a>
@@ -85,6 +94,10 @@ const Layout = ({ children, label, layout, route, routes }) => {
         </Wrapper>
       </S.Footer>
       )}
+      <S.MousePoint style={{ position: 'fixed', left: mousePosition?.clientX, top: mousePosition?.clientY }} />
+      <animated.div style={{ position: 'fixed', zIndex: 1, ...styles }} ref={mouseTracker}>
+        <S.MouseTracker />
+      </animated.div>
     </S.Main>
   )
 }
