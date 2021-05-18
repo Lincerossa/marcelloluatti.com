@@ -66,12 +66,13 @@ const Lights = React.memo(() => {
 })
 
 function Surfing({ setSurfed }) {
-  useFrame(({ camera }) => {
+  useFrame(({ camera, clock }) => {
+    if (clock?.elapsedTime < 0.75) return
     if (camera.position.z > 5) {
-      camera.position.z = MathUtils.lerp(camera.position.z, 4, 0.05)
+      camera.position.z = MathUtils.lerp(camera.position.z, 4, 0.03)
     }
     if (camera.position.y > 0) {
-      camera.position.y = MathUtils.lerp(camera.position.y, -1, 0.05)
+      camera.position.y = MathUtils.lerp(camera.position.y, -1, 0.03)
     }
 
     if ((camera.position.y <= 0) && (camera.position.z <= 5)) {
