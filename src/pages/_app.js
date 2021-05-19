@@ -20,6 +20,7 @@ function App({ Component, pageProps }) {
         <meta property="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta property="og:type" content="website" />
         <link defer async href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500&display=swap" as="font" />
+        <link href="favicon.ico" rel="icon" />
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
