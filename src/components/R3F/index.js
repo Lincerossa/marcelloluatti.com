@@ -6,17 +6,17 @@ import { OrbitControls, useGLTF, Text, Stars } from '@react-three/drei';
 import * as S from './styles'
 import theme from '../../styles/theme';
 
-const Sphere = (props) => {
+const Sphere = ({ position }) => {
   const { materials } = useGLTF('/test.gltf');
   return (
-    <group position={props.position}>
+    <group position={position}>
       <mesh material={materials['Material.001']}>
         <sphereBufferGeometry args={[0.2, 20, 20]} />
       </mesh>
     </group>
   )
 }
-const Totem = (props) => {
+const Totem = ({ onClick, negative, position, timer, ...props }) => {
   const [isActive, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
   const group = useRef();
@@ -25,19 +25,19 @@ const Totem = (props) => {
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime() / 4
-    if (time > props.timer) setActive(true)
-    group.current.rotation.y = props.negative ? +time : -time
+    if (time > timer) setActive(true)
+    group.current.rotation.y = negative ? +time : -time
   })
 
   return (
-    <group onClick={props.onClick} onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)} onPointerDown={props.onClick}>
-      <group ref={group} {...props} dispose={null} scale={0.4} position={props.position}>
+    <group onClick={onClick} onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)} onPointerDown={onClick}>
+      <group ref={group} {...props} dispose={null} scale={0.4} position={position}>
         <mesh material={materials['Material.001']}>
           <boxGeometry args={[1, 2, 1]} />
         </mesh>
       </group>
       {isActive && (
-      <group {...props} dispose={null} position={[props.negative ? -1 : 1, props.position[1], props.position[2]]}>
+      <group {...props} dispose={null} position={[negative ? -1 : 1, position[1], position[2]]}>
         <Text
           fontSize={0.3}
           cursor="pointer"
