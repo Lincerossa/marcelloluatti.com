@@ -5,9 +5,12 @@ export const Card = styled.div`
   display: block;
   height: 100%;
   position: relative;
+  border-radius: 6px;
+  overflow: hidden;
   transition: .1s all;
+  box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.1);
   &:hover {
-    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.25)
+    box-shadow: 0 0 9.5px 0.5px rgba(0,0,0,.3)
   }
 `
 
@@ -51,7 +54,8 @@ export const Media = styled.img`
 
 export const Supertitle = styled.div`
   font-family: sans-serif;
-  color: ${(props) => props.theme.colors.primary};
+  color: white;
+  font-weight: 100;
   font-size: .875rem;
   text-transform: uppercase;
   margin-bottom: .5rem;
@@ -59,15 +63,13 @@ export const Supertitle = styled.div`
 
 export const Title = styled.div`
   font-size: 1.75rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: .5rem;
   color: white ;
 `
 
 export const Subtitle = styled.div`
-  margin-bottom: .5rem;
-  text-transform: uppercase;
   font-size: .75rem;
   color: white;
 `
