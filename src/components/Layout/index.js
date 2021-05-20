@@ -43,7 +43,6 @@ const Layout = ({ children, label, layout, slug, routes }) => {
   }
   useEffect(() => {
     router.events.on('routeChangeComplete', handleCloseMenu)
-    return () => router.events.off('routeChangeComplete', handleCloseMenu)
   }, [])
 
   return (

@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper'
 
 const PostHero = ({ media, supertitle, title, subtitle }) => (
   <S.MediaWrapper>
-    <S.Media src={media && media.url} />
+    <S.Media src={media?.url} />
     <Wrapper>
       <S.MediaHeader>
         <S.Supertitle>{supertitle}</S.Supertitle>

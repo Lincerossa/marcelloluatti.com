@@ -9,7 +9,6 @@ export const WithBackground = ({ background, color, children }) => {
     return (
       <Background background={background} color={color}>
         {children}
-        {' '}
       </Background>
     )
   }
@@ -21,7 +20,6 @@ export const WithWrapper = ({ wrapper, children }) => {
     return (
       <Wrapper size={wrapper}>
         {children}
-        {' '}
       </Wrapper>
     )
   }
@@ -33,7 +31,6 @@ export const WithPadder = ({ padder, children }) => {
     return (
       <Padder size={padder}>
         {children}
-        {' '}
       </Padder>
     )
   }

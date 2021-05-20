@@ -11,7 +11,6 @@ const ListOfCards = ({ items }) => (
       <Link key={item.slug} href="/[...dynamic]" as={`/${item.slug}`} disabled={!item.slug}>
         <a>
           <S.ListItem>
-            {' '}
             <Card {...item} layout="auto" />
           </S.ListItem>
         </a>
