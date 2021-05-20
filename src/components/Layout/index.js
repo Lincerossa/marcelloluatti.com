@@ -43,8 +43,6 @@ const Layout = ({ children, label, layout, slug, routes }) => {
   useEffect(() => {
     router.events.on('routeChangeComplete', () => setMenuOpen(false))
 
-    if (typeof window === 'undefined') return
-
     window.addEventListener('scroll', handleGetDirection, false)
     // eslint-disable-next-line consistent-return
     return () => {
@@ -117,7 +115,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
         </Wrapper>
       </S.Footer>
       )}
-      <MagicMouse />
+      {typeof window !== 'undefined' && window.innerWidth > 768 && <MagicMouse />}
     </S.Main>
   )
 }
