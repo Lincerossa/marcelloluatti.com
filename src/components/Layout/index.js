@@ -63,7 +63,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
           <S.HeaderInner>
             <Link href="/" as="/">
               <a>
-                <S.Logo>
+                <S.Logo initial={initial} isMenuOpen={isMenuOpen}>
                   <Logo />
                 </S.Logo>
               </a>
@@ -74,7 +74,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
                 <S.MenuItems>
                   {
                   routes?.filter((e) => !e.hidden).map((e) => (
-                    <S.MenuItem key={e.slug} isActive={e.slug === slug}>
+                    <S.MenuItem key={e.slug} isActive={e.slug === slug} direction={direction} isMenuOpen={isMenuOpen} initial={initial}>
                       <Link href="/[...dynamic]" as={`/${e.slug}`}>
                         <a>{e.label}</a>
                       </Link>
@@ -101,15 +101,15 @@ const Layout = ({ children, label, layout, slug, routes }) => {
           <S.FooterInner>
             <Link href="/" as="/">
               <a>
-                <S.Logo>
+                <S.Logo initial>
                   <Logo />
                 </S.Logo>
               </a>
             </Link>
             <S.ExternalLinks>
-              <a href="https://github.com/Lincerossa" target="_blank" rel="noreferrer">Github</a>
-              <a href="https://twitter.com/cav_lince" target="_blank" rel="noreferrer">Twitter</a>
-              <a href="https://www.linkedin.com/in/marcello-luatti/" target="_blank" rel="noreferrer">Linkedin</a>
+              <S.ExternalLink href="https://github.com/Lincerossa" target="_blank" rel="noreferrer">Github</S.ExternalLink>
+              <S.ExternalLink href="https://twitter.com/cav_lince" target="_blank" rel="noreferrer">Twitter</S.ExternalLink>
+              <S.ExternalLink href="https://www.linkedin.com/in/marcello-luatti/" target="_blank" rel="noreferrer">Linkedin</S.ExternalLink>
             </S.ExternalLinks>
           </S.FooterInner>
         </Wrapper>

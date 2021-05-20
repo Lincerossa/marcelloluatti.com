@@ -3,8 +3,9 @@ import styled from 'styled-components'
 export const Main = styled.main`
   min-height: 100vh;
 `;
+
 export const MainLabel = styled.div`
-  height:75vh;
+  height: 60vh;
   position: relative;
   background-color: ${(props) => props.theme.colors.secondary};
   display: flex;
@@ -15,27 +16,6 @@ export const MainLabel = styled.div`
     height: 100vh;
   }
 `;
-
-export const Logo = styled.div`
-  width: 60px;
-  font-size: 2rem;
-  display: flex;
-
-  @media (min-width: 768px){
-    width: 90px;
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: white;
-    transition: .2s  all;
-  }
-  &:hover {
-    svg{
-      fill: ${(props) => props.theme.colors.primary};
-    }
-  }
-`
 
 export const Header = styled.div`
   position: fixed;
@@ -57,22 +37,6 @@ export const Header = styled.div`
     bottom: 0;
   `}
 
-  a {
-    color: ${(props) => ((props.initial || props.isMenuOpen) ? 'white' : props.theme.colors.secondary)} !important;
-    
-    &:hover{
-      color: ${(props) => props.theme.colors.primary} !important;
-    }
-  }
-
-  svg {
-    fill: ${(props) => (props.initial ? 'white' : props.theme.colors.secondary)} !important;
-    
-    &:hover{
-      fill: ${(props) => props.theme.colors.primary} !important;
-    }
-  }
-
   @media (min-width: 768px){
     bottom: auto;
   }
@@ -86,15 +50,15 @@ export const HeaderInner = styled.div`
 `
 
 export const Menu = styled.div`
-    display: ${(props) => (props.isMenuOpen ? `
-      display: block;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: ${props.theme.colors.secondary};
-    ` : 'none')};
+  display: ${(props) => (props.isMenuOpen ? `
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: ${props.theme.colors.secondary};
+  ` : 'none')};
 
   @media (min-width: 768px){
     display: block;
@@ -136,10 +100,8 @@ export const MenuItem = styled.div`
   }
   
   a {
-    ${(props) => props.isActive && `
-      color: ${props.theme.colors.primary} !important;
-    `};
-    
+    color: ${(props) => ((props.initial || props.isMenuOpen) ? 'white' : props.theme.colors.secondary)} !important;
+    ${(props) => props.isActive && `color: ${props.theme.colors.primary}  !important`};
     &:hover{
       color: ${(props) => props.theme.colors.primary} !important;
     }
@@ -156,21 +118,18 @@ export const Hamburger = styled.div`
   top: 1.25rem;
   right: 1rem;
   width: 25px;
-  color: ${(props) => (props.initial ? 'white' : props.theme.colors.primary)};
-  ${(props) => props.isMenuOpen && 'color: white'};
   @media (min-width: 768px){
     display: none;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: ${(props) => ((props.initial || props.isMenuOpen) ? 'white' : props.theme.colors.secondary)} !important;
   }
 `
 
 export const Footer = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
-  a {
-    color: white;
-    &:hover {
-      color: ${(props) => props.theme.colors.primary};
-    }
-  }
 `
 
 export const FooterInner = styled.div`
@@ -183,10 +142,14 @@ export const ExternalLinks = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
+`
 
-  a {
-    display: flex;
-    align-items: center;
+export const ExternalLink = styled.a`
+  display: flex;
+  align-items: center;
+  color: white !important;
+  &:hover {
+    color: ${(props) => props.theme.colors.primary};
   }
 `
 
@@ -199,10 +162,9 @@ export const MouseTracker = styled.div`
     pointer-events: none;
     width: 20px;
     transform: translate(-50%,-50%);
-  }
-
-  
+  }  
 `
+
 export const MousePoint = styled.div`
   @media (min-width: 768px){
     position: fixed;
@@ -213,5 +175,26 @@ export const MousePoint = styled.div`
     pointer-events: none;
     z-index: 3;
     transform: translate(-50%,-50%);
+  }
+`
+
+export const Logo = styled.div`
+  width: 60px;
+  font-size: 2rem;
+  display: flex;
+
+  @media (min-width: 768px){
+    width: 90px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: ${(props) => ((props.initial || props.isMenuOpen) ? 'white' : props.theme.colors.secondary)} !important;
+    transition: .2s  all;
+  }
+  &:hover {
+    svg{
+      fill: ${(props) => props.theme.colors.primary}  !important;
+    }
   }
 `
