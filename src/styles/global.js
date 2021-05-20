@@ -45,7 +45,7 @@ export default createGlobalStyle`
   }
 
   h3 {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     @media (min-width: 768px){
       font-size: 1.5
     }
@@ -53,7 +53,7 @@ export default createGlobalStyle`
 
   p, span {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.75;
   }
 
