@@ -8,13 +8,14 @@ import { routes } from '../data'
 
 function App({ Component, pageProps }) {
   const { route } = pageProps;
-  const { metaTitle, metaDescription } = route || {};
+  const { metaTitle, metaDescription, metaImage } = route || {};
   return (
     <>
       <Head>
         <title>{metaTitle}</title>
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
         <meta property="title" content={metaTitle} />
         <meta property="description" content={metaDescription} />
         <meta property="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />

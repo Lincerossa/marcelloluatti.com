@@ -71,7 +71,7 @@ const data = {
       layout: 'full',
       metaTitle: 'Marcello Luatti | Lince',
       metaDescription: 'Marcello Luatti description',
-      metaImage: null,
+      metaImage: 'https://avatars.githubusercontent.com/u/16242899?v=4?s=400',
       hidden: true,
       componentIds: ['R3F_homepage'],
     },
