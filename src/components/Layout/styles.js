@@ -47,9 +47,9 @@ export const Header = styled.div`
   transition: .2s  all;
   transition-timing-function: ease-in;
   justify-content: space-between;
-  background: ${(props) => (props.inverted ? 'transparent' : 'rgb(255,255,255,.9)')};
-  box-shadow: ${(props) => (props.inverted ? 'none' : '0px 2px 8px rgba(0,0,0,0.15)')};
-  ${(props) => (props.scrollDirection === 'down'
+  background: ${(props) => (props.initial ? 'transparent' : 'rgb(255,255,255,.9)')};
+  box-shadow: ${(props) => (props.initial ? 'none' : '0px 2px 8px rgba(0,0,0,0.15)')};
+  ${(props) => (props.direction === 'down' && !props.isMenuOpen
     ? 'transform: translate(0,-100%);'
     : 'transform: translate(0,0%);')
 }
@@ -58,7 +58,7 @@ export const Header = styled.div`
   `}
 
   a {
-    color: ${(props) => (props.inverted ? 'white' : props.theme.colors.secondary)} !important;
+    color: ${(props) => ((props.initial || props.isMenuOpen) ? 'white' : props.theme.colors.secondary)} !important;
     
     &:hover{
       color: ${(props) => props.theme.colors.primary} !important;
@@ -66,7 +66,7 @@ export const Header = styled.div`
   }
 
   svg {
-    fill: ${(props) => (props.inverted ? 'white' : props.theme.colors.secondary)} !important;
+    fill: ${(props) => (props.initial ? 'white' : props.theme.colors.secondary)} !important;
     
     &:hover{
       fill: ${(props) => props.theme.colors.primary} !important;
@@ -86,15 +86,15 @@ export const HeaderInner = styled.div`
 `
 
 export const Menu = styled.div`
-  display: ${(props) => (props.isMenuOpen ? `
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: ${props.theme.colors.secondary};
-  ` : 'none')};
+    display: ${(props) => (props.isMenuOpen ? `
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: ${props.theme.colors.secondary};
+    ` : 'none')};
 
   @media (min-width: 768px){
     display: block;
@@ -156,7 +156,7 @@ export const Hamburger = styled.div`
   top: 1.25rem;
   right: 1rem;
   width: 25px;
-  color: ${(props) => (props.inverted ? 'white' : props.theme.colors.primary)};
+  color: ${(props) => (props.initial ? 'white' : props.theme.colors.primary)};
   ${(props) => props.isMenuOpen && 'color: white'};
   @media (min-width: 768px){
     display: none;

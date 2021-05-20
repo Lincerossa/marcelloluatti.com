@@ -5,10 +5,8 @@ import { useSpring, animated } from 'react-spring';
 import Logo from './logo.svg'
 import Hamburger from './hamburger.svg'
 import Close from './close.svg'
-import { useScrollDirection } from '../../hooks'
 import Wrapper from '../Wrapper'
 import * as S from './styles'
-
 import * as C from '../../styles/common'
 
 const MagicMouse = React.memo(() => {
@@ -30,24 +28,39 @@ const MagicMouse = React.memo(() => {
 })
 
 const Layout = ({ children, label, layout, slug, routes }) => {
-  const { scrollDirection, scrollPosition } = useScrollDirection()
+  const [{ initial, direction }, setScrollStatus] = useState({ position: 0, initial: true, direction: 'up' })
   const [isMenuOpen, setMenuOpen] = useState(null)
   const router = useRouter()
-  const inverted = scrollPosition < 200
 
-  function handleCloseMenu() {
-    setMenuOpen(false)
+  function handleGetDirection() {
+    setScrollStatus((prevState) => ({
+      position: window.scrollY,
+      initial: window.scrollY < 500,
+      direction: (window.scrollY > prevState.position) && (window.scrollY > 500) ? 'down' : 'up',
+    }))
   }
-  function handleToggleMenu() {
-    setMenuOpen(!isMenuOpen)
-  }
+
   useEffect(() => {
-    router.events.on('routeChangeComplete', handleCloseMenu)
+    router.events.on('routeChangeComplete', () => setMenuOpen(false))
+
+    if (typeof window === 'undefined') return
+
+    window.addEventListener('scroll', handleGetDirection, false)
+    // eslint-disable-next-line consistent-return
+    return () => {
+      window.removeEventListener('scroll', handleGetDirection, false)
+    }
   }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.document.getElementsByTagName('html')[0].style.overflowY = isMenuOpen ? 'hidden' : 'visible'
+    }
+  }, [isMenuOpen])
 
   return (
     <S.Main>
-      <S.Header scrollDirection={scrollDirection} isMenuOpen={isMenuOpen} inverted={inverted}>
+      <S.Header direction={direction} isMenuOpen={isMenuOpen} initial={initial}>
         <Wrapper size="large">
           <S.HeaderInner>
             <Link href="/" as="/">
@@ -73,7 +86,7 @@ const Layout = ({ children, label, layout, slug, routes }) => {
                 </S.MenuItems>
               </S.Menu>
 
-              <S.Hamburger isMenuOpen={isMenuOpen} inverted={inverted} onClick={handleToggleMenu}>
+              <S.Hamburger isMenuOpen={isMenuOpen} initial={initial} onClick={() => setMenuOpen(!isMenuOpen)}>
                 { isMenuOpen ? <Close /> : <Hamburger />}
               </S.Hamburger>
             </>
