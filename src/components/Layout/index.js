@@ -35,8 +35,8 @@ const Layout = ({ children, label, layout, slug, routes }) => {
   function handleGetDirection() {
     setScrollStatus((prevState) => ({
       position: window.scrollY,
-      initial: window.scrollY < 500,
-      direction: (window.scrollY > prevState.position) && (window.scrollY > 500) ? 'down' : 'up',
+      initial: window.scrollY < 250,
+      direction: (window.scrollY > prevState.position) && (window.scrollY > 600) ? 'down' : 'up',
     }))
   }
 
