@@ -15,12 +15,19 @@ const asutkin = {
   tags: ['Next', 'Pagebuilder', 'React', 'Netlify'],
   subtitle: 'Personal blog for our hikings',
 }
+const dallara = {
+  slug: 'projects/dallara',
+  image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1621590784/marcelloluatti.com/Screenshot_2021-05-21_at_11.51.10_en06za.png' },
+  title: 'Dallara',
+  tags: ['cssdesignawards', 'Styled-components', 'React', 'Animations'],
+  subtitle: 'Dallara stradale (cssdesignawards)',
+}
 const godoo = {
   slug: 'projects/godoo',
   image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934295/marcelloluatti.com/Screenshot_2021-05-13_at_21.30.23_zuwq54.png' },
   title: 'Godoo website',
   tags: ['React', 'Styled-components', 'Gatsby', 'Pagebuilder'],
-  subtitle: 'product website developed with gatsby + Pb',
+  subtitle: 'Product website developed using gatsby + Md',
 }
 
 const salini = {
@@ -36,7 +43,7 @@ const corneliani = {
   image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934560/marcelloluatti.com/Screenshot_2021-05-13_at_21.35.07_g8q5by.png' },
   title: 'Corneliani ecommerce',
   tags: ['React', 'Next', 'Graphql', 'Nodejs server'],
-  subtitle: 'Really beautiful and fast ecommerce',
+  subtitle: 'SSR Next ecommerce',
 }
 
 const fai = {
@@ -44,7 +51,7 @@ const fai = {
   image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934997/marcelloluatti.com/Screenshot_2021-05-13_at_21.42.21_ef54qh.png' },
   title: 'Fondoambiente',
   tags: ['React', 'Next', 'Styled-components', 'Aws'],
-  subtitle: 'Huge and super beautiful project',
+  subtitle: 'Institutional website',
 }
 
 const moleskine = {
@@ -52,7 +59,7 @@ const moleskine = {
   image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620934715/marcelloluatti.com/Screenshot_2021-05-13_at_21.37.58_r85ej1.png' },
   title: 'Moleskine blog',
   tags: ['Scss', 'Es6', 'Webpack'],
-  subtitle: 'Really nice company blog website',
+  subtitle: 'A graphically beautiful blog website',
 }
 
 const supermoney = {
@@ -108,6 +115,15 @@ const data = {
       metaImage: null,
       hidden: true,
       componentIds: ['Card_asutkin'],
+    },
+    {
+      slug: 'projects/dallara',
+      label: 'Dallara',
+      metaTitle: 'Marcello Luatti | Dallara',
+      metaDescription: 'Marcello Luatti | Dallara Project',
+      metaImage: null,
+      hidden: true,
+      componentIds: ['RichText_dallara', 'Card_dallara'],
     },
     {
       slug: 'projects/godoo',
@@ -209,6 +225,14 @@ const data = {
       background: 'white',
     },
     {
+      id: 'Card_dallara',
+      component: 'Card',
+      ...dallara,
+      wrapper: 'big',
+      padder: 'large',
+      background: 'white',
+    },
+    {
       id: 'Card_godoo',
       component: 'Card',
       ...godoo,
@@ -304,7 +328,7 @@ const data = {
     {
       id: 'ListOfCards_projects',
       component: 'ListOfCards',
-      items: [bpmn, asutkin, godoo, salini, corneliani, fai, moleskine, supermoney],
+      items: [bpmn, asutkin, godoo, dallara, salini, corneliani, fai, moleskine, supermoney],
       background: 'white',
       color: theme.colors.primary,
       padder: 'large',
@@ -383,6 +407,15 @@ const data = {
       id: 'RichText_bpmn',
       component: 'RichText',
       text: '<p>I have developed from scratch this new tool (SAS) in order to let our clients to create their personal product flows</p><p>Technology stack: React, ES6, Node.js, TDD, Continuous integration, Cra (seo was not required here), versioning and releasing libraries (npm, github actions, semantic versioning, babel).</p>',
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_dallara',
+      component: 'RichText',
+      text: '<h2>Dallara Stradale</h2><p>This project was judged by <a href="https://www.cssdesignawards.com/sites/dallara-stradale/35316/" target="_blank">www.cssdesignawards.com</a></p><p>The Technology stack involved: React, styled-components, complex animations (managed using react-spring) and Provider/consumer patterns.</p>',
       background: theme.colors.secondary,
       color: 'white',
       padder: 'large',
