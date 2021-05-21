@@ -19,7 +19,7 @@ const dallara = {
   slug: 'projects/dallara',
   image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1621590784/marcelloluatti.com/Screenshot_2021-05-21_at_11.51.10_en06za.png' },
   title: 'Dallara',
-  tags: ['cssdesignawards', 'Styled-components', 'React', 'Animations'],
+  tags: ['cssdesignawards', 'React', 'Interaction-design'],
   subtitle: 'Dallara stradale (cssdesignawards)',
 }
 const godoo = {
