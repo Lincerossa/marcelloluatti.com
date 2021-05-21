@@ -63,15 +63,16 @@ export const Supertitle = styled.div`
 
 export const Title = styled.div`
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1;
   margin-bottom: .5rem;
-  color: white ;
+  color: white;
 `
 
 export const Subtitle = styled.div`
   font-size: .75rem;
   color: white;
+  font-weight: 100;
 `
 
 export const Description = styled.div`
@@ -84,15 +85,28 @@ export const Description = styled.div`
 
 export const TagsWrapper = styled.div`
   display: flex;
-  margin-bottom: .5rem;
-  font-family: sans-serif;
+  margin-bottom: 1rem;
   letter-spacing: .04em;
 `
 export const Tag = styled.div`
   border-radius: 4px;
-  background: ${(props) => props.theme.colors.primary};
   color: white;
-  font-size: .656rem;
-  padding: .25rem .5rem;
-  margin-right: .25rem;
+  font-size: .6rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  position: relative;
+  margin-right: 1rem;
+
+  text-transform: uppercase;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+    right: -.7rem;
+    width: .4rem;
+    height: .4rem;
+    background: ${(props) => props.theme.colors.primary};
+  }
 `
