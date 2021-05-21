@@ -25,7 +25,7 @@ const godoo = {
 
 const salini = {
   slug: 'projects/salini',
-  image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1590504923/24.05.2020/WhatsApp_Image_2020-05-24_at_18.55.00_thik3t.jpg' },
+  image: { src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1621587810/marcelloluatti.com/Screenshot_2021-05-21_at_11.03.06_mot0no.png' },
   title: 'Salini Impregilo',
   tags: ['React', 'Cra', 'Styled-components', 'Prisma'],
   subtitle: 'Complex management dashboard tool',
@@ -98,7 +98,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Bpmn Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_bpmn'],
+      componentIds: ['RichText_bpmn', 'Card_bpmn'],
     },
     {
       slug: 'projects/asutkin',
@@ -116,7 +116,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Godoo Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_godoo'],
+      componentIds: ['RichText_godoo', 'Card_godoo'],
     },
     {
       slug: 'projects/salini',
@@ -125,7 +125,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Salini Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_salini'],
+      componentIds: ['RichText_salini', 'Card_salini'],
     },
     {
       slug: 'projects/corneliani',
@@ -134,7 +134,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Corneliani Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_corneliani'],
+      componentIds: ['RichText_corneliani', 'Card_corneliani'],
     },
     {
       slug: 'projects/fai',
@@ -143,7 +143,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Fai Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_fai'],
+      componentIds: ['RichText_fai', 'Card_fai'],
     },
     {
       slug: 'projects/moleskine',
@@ -152,7 +152,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Moleskine Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_moleskine'],
+      componentIds: ['RichText_moleskine', 'Card_moleskine'],
     },
     {
       slug: 'projects/supermoney',
@@ -161,7 +161,7 @@ const data = {
       metaDescription: 'Marcello Luatti | Supermoney Project',
       metaImage: null,
       hidden: true,
-      componentIds: ['Card_supermoney'],
+      componentIds: ['RichText_supermoney', 'Card_supermoney'],
     },
     {
       slug: 'blog',
@@ -307,6 +307,84 @@ const data = {
       items: [bpmn, asutkin, godoo, salini, corneliani, fai, moleskine, supermoney],
       background: 'white',
       color: theme.colors.primary,
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_salini',
+      component: 'RichText',
+      text: `<h2>Salini Impregilo - Dashboard tool</h2>
+      <p>Software architecture has been designed for daily purposes of Salini Management team: adding, modifying and displaying different types of complex data.</p><p> Challenged by the data quantity, its complexity and the performance issues, we built a GraphQL server layer upon a Prisma server.</p><p> Thanks to this solution we managed to send to the client the smallest possible payload.</p><p>
+      Authentication is handled by Auth0 and the frontend is built with React and Redux and tested with Jest.</p><p> The project is based on AWS (Route 53, EC2, S3 Buckets).</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_corneliani',
+      component: 'RichText',
+      text: `<h2>Corneliani - E-commerce</h2>
+      <p>In <a target="_blank" href="https://www.corneliani.com/">this project</a> we managed to use part of the <a href="/projects/fai">previous stack</a>, which involved Next.js, React, Redux, Storybook and Jest for testing purposes.</p>
+      <p>Compared to the previous project, we built a GraphQL layer in order to solve issue performances (for example the payload server-client) and other side effects while the application was scaling.</p><p> This layer had the task of handling the communication between the frontend and both Wordpress (for the CMS side) and Magento (the e- commerce side).
+      The project is based on AWS.</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_fai',
+      component: 'RichText',
+      text: `<h2>Fondoambiente - Istitutional website</h2>
+      
+      
+      <p>The complexity of <a href="https://www.fondoambiente.it/" target="_blank">this project</a> led us to the definition of the new development stack.</p><p> This stack included: Node.js, React, Redux, Next.js with Express, Lerna, Styled components, ES6, Headless Wordpress (as the cms for the data input).</p>
+      <p>We learnt the importance and the benefits of UI testing, and of adopting the React patters (hoc, context, redux patterns, render props, compose...) to keep the project reusable, simple and readable while application was scaling.</p>
+      <p>The project is based on AWS.</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_moleskine',
+      component: 'RichText',
+      text: `<h2>Fold by Moleskine</h2>
+      <p><a href="https://thefoldmag.com/" target="_blank">This project</a> involved: Laravel, Blade, Sass (with BEM Naming), Webpack.</p><p>Working on this Blog gave me a clear understanding of the advantages of adopting a
+      structured software architecture and the importance of testing.</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_supermoney',
+      component: 'RichText',
+      text: `<h2>Supermoney</h2><p>I developed the front-end of the new website and several company web applications.</p><p> I was
+      involved in the development of single landing pages, as well as the entire information flows
+      for lead generation. The realization of the News section raised more than 25.000 daily visualizations.</p><p>Technology:Javascript, CSS3 (Less), Html5, Node.js, Gulp, Webpack, Git, Bootstrap.</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_godoo',
+      component: 'RichText',
+      text: `<p>Update of the old legacy product code, simplification of the product’s architecture</p><p>Development of static websites, library components, npm
+      private package</p><p>Technology stack: React, Redux/provider-consumer patterns, styled-components, Cra, Next.js</p>`,
+      background: theme.colors.secondary,
+      color: 'white',
+      padder: 'large',
+      wrapper: 'large',
+    },
+    {
+      id: 'RichText_bpmn',
+      component: 'RichText',
+      text: '<p>I have developed from scratch this new tool (SAS) in order to let our clients to create their personal product flows</p><p>Technology stack: React, ES6, Node.js, TDD, Continuous integration, Cra (seo was not required here), versioning and releasing libraries (npm, github actions, semantic versioning, babel).</p>',
+      background: theme.colors.secondary,
+      color: 'white',
       padder: 'large',
       wrapper: 'large',
     },
