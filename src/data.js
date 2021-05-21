@@ -70,7 +70,7 @@ const data = {
       label: 'Marcello Luatti',
       layout: 'full',
       metaTitle: 'Marcello Luatti',
-      metaDescription: 'Front End Engineer based by the Lake of Como',
+      metaDescription: 'Front End Engineer based by the Lake Como',
       metaImage: 'https://avatars.githubusercontent.com/u/16242899?v=4?s=400',
       hidden: true,
       componentIds: ['R3F_homepage'],
@@ -336,7 +336,7 @@ const data = {
     {
       id: 'RichText_fai',
       component: 'RichText',
-      text: `<h2>Fondoambiente - Istitutional website</h2>
+      text: `<h2>Fondoambiente - Institutional website</h2>
       
       
       <p>The complexity of <a href="https://www.fondoambiente.it/" target="_blank">this project</a> led us to the definition of the new development stack.</p><p> This stack included: Node.js, React, Redux, Next.js with Express, Lerna, Styled components, ES6, Headless Wordpress (as the cms for the data input).</p>
