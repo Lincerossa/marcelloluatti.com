@@ -1,22 +1,8 @@
-import React from 'react'
-import * as C from '../components'
-import * as M from '../components/Maybe'
-import { routes, components } from '../data'
-
-const App = ({ components }) => components?.map(({ id, component, ...props }) => {
-  const Component = C[component]
-  return (
-    <M.WithBackground {...props} key={id}>
-      <M.WithWrapper {...props}>
-        <M.WithPadder {...props}>
-          <Component {...props} />
-        </M.WithPadder>
-      </M.WithWrapper>
-    </M.WithBackground>
-  )
-})
+import data from '../data'
+import App from '../App'
 
 export async function getStaticPaths() {
+  const { routes } = data
   return {
     paths: routes.filter((e) => e.slug !== '').map(({ slug }) => ({ params: {
       dynamic: slug.split('/'),
@@ -26,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { dynamic } }) {
+  const { routes, components } = data
   const route = routes.find((e) => e.slug === dynamic.join('/'))
   return {
     props: {
