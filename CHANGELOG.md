@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.1.0...v1.1.1) (2021-11-17)
+
+
+### Bug Fixes
+
+* 🐛 added commitizen locally in order to force using the V ([7f4eefc](https://github.com/Lincerossa/marcelloluatti.com/commit/7f4eefcdda131a5c2918e814c761c860529bb943))
+
 # [1.1.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.0.0...v1.1.0) (2021-11-17)
 
 
