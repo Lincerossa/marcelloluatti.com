@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.0.0...v1.1.0) (2021-11-17)
+
+
+### Bug Fixes
+
+* added the actual p json edit! ([536a0e5](https://github.com/Lincerossa/marcelloluatti.com/commit/536a0e523337a89c989750c0b816482bdc878580))
+
+
+### Features
+
+* added in p json script the commit script ([53363ed](https://github.com/Lincerossa/marcelloluatti.com/commit/53363ed923c7e0a258a4418adb72efca402de13c))
+* **added git cz with conventional commit structure:** added git-cz with conventional commit ([9c90ba6](https://github.com/Lincerossa/marcelloluatti.com/commit/9c90ba6ec7155854e37d4594da04b4b62a1c5f35))
+
 # 1.0.0 (2021-05-17)
 
 
