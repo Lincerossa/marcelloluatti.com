@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {FC } from 'react'
 import * as S from './styles'
+import { TBackgroundProps } from './types'
 
-const Background = ({ background, color, children }) => (
+const Background: FC<TBackgroundProps> = ({ background, color, children }) => (
   <S.Background
     color={color}
     background={background}
