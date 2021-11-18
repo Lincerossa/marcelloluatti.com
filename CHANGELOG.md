@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.1.1...v1.2.0) (2021-11-18)
+
+
+### Features
+
+* 🎸 added the basic nextjs file structure for ts migration ([59192aa](https://github.com/Lincerossa/marcelloluatti.com/commit/59192aa49ed87fb9d1398c89c690869367288981))
+
 ## [1.1.1](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.1.0...v1.1.1) (2021-11-17)
 
 
