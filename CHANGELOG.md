@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.2.0...v1.3.0) (2021-11-19)
+
+
+### Bug Fixes
+
+* 🐛 strange hidden character for eslint ([6d86167](https://github.com/Lincerossa/marcelloluatti.com/commit/6d861674f3ef1c90d8406d580213f34589b619fe))
+* 🐛 Wrapper to ts ([16881dc](https://github.com/Lincerossa/marcelloluatti.com/commit/16881dc687f108ff0c8ae1ad24b7b54ead7338a6))
+* 🐛 wrong type name ([7e17998](https://github.com/Lincerossa/marcelloluatti.com/commit/7e17998b3bb77a4a3ae91de1fc1f4b063b7a3aee))
+
+
+### Features
+
+* 🎸 added types for styled-components ([6a53697](https://github.com/Lincerossa/marcelloluatti.com/commit/6a5369745840a40173b75af9585ced0e65b64e54))
+* 🎸 first Component moved to tsx ([c919198](https://github.com/Lincerossa/marcelloluatti.com/commit/c919198e1af419be674a09efab3fd47bce26b353))
+* 🎸 vscode settings ([5ad9fbd](https://github.com/Lincerossa/marcelloluatti.com/commit/5ad9fbd9aab5a83e69c5284c57fbf1303f0e3310))
+
 # [1.2.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.1.1...v1.2.0) (2021-11-18)
 
 
