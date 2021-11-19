@@ -1,4 +1,4 @@
-export type TWrapperProps = {
-	hasPadding: boolean
+export type TBackgroundProps = {
+  hasPadding: boolean
   size: 'small' | 'regular' | 'big' | 'large'
 }
