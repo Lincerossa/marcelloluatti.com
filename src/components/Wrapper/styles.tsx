@@ -12,5 +12,5 @@ export const Wrapper = styled.div<TWrapperProps>`
   width: 100%;
   margin: 0 auto;
   ${({ hasPadding }) => hasPadding && 'padding: 0 1rem'};
-  max-width: ${({ size }) => `${SIZES[size]}px`};
+  max-width: ${({ size }) => (size ? `${SIZES[size]}px` : '100%')};
 `
