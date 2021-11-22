@@ -22,7 +22,7 @@ const ListOfCards: FC<TListOfCardsProps> = ({ items }) => (
               title={title}
               subtitle={subtitle}
               tags={tags}
-              layout={layout}
+              layout='auto'
             />
           </S.ListItem>
         </a>
