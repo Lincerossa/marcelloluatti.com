@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.3.0...v1.4.0) (2021-11-22)
+
+
+### Bug Fixes
+
+* 🐛 Wrapper now handles also ?size ([51f929c](https://github.com/Lincerossa/marcelloluatti.com/commit/51f929c8e9c9729322e65ba54ae30cece3cf9ffb))
+* 🐛 wrong layout props to Card ([9bb8ff3](https://github.com/Lincerossa/marcelloluatti.com/commit/9bb8ff331def718872521431d4c691efaec92230))
+
+
+### Features
+
+* 🎸 eslint throw now an error any time to any semi ([bf7ff24](https://github.com/Lincerossa/marcelloluatti.com/commit/bf7ff241f371dd1be4a78c9d296e93d1f298fdb8))
+
 # [1.3.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.2.0...v1.3.0) (2021-11-19)
 
 
