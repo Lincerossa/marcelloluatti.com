@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { TPadderProps } from './types'
 
 const SIZES = {
   small: 1,
@@ -6,6 +7,8 @@ const SIZES = {
   large: 3,
 }
 
-export const Padder = styled.div`
+type PadderProps = Pick<TPadderProps, 'size'>
+
+export const Padder = styled.div<PadderProps>`
   padding: ${(props) => `${SIZES[props.size]}rem 0`};
 `
