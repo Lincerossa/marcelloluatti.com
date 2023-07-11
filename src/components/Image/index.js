@@ -1,10 +1,10 @@
-import React, { FC } from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+import React from 'react'
 import * as S from './styles'
-import { TImageProps } from './types'
 
-const MyImage: FC<TImageProps> = ({ image, hasShadow }) => (
+const MyImage = ({ image, hasShadow }) => (
   <S.ImageWrapper>
-    <img src={image.src} alt={image.alt} />
+    <img {...image} />
     {hasShadow && <S.Shadow />}
     {image?.description && <S.Description>{image.description}</S.Description>}
   </S.ImageWrapper>

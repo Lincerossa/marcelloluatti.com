@@ -1,11 +1,8 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Image from '../Image'
 import * as S from './styles'
-import { TCardProps } from './types'
 
-const Card: FC<TCardProps> = ({
-  image, supertitle, title, tags, subtitle, layout,
-}) => (
+const Card = ({ image, supertitle, title, tags, subtitle, layout }) => (
   <S.Card>
     <S.ImageWrapper layout={layout}>
       <Image image={image} />

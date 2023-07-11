@@ -1,9 +1,7 @@
-import React, { FC } from 'react'
+import React from 'react'
 import * as S from './styles'
 
-import { TRichTextProps } from './types'
-
-const RichText: FC<TRichTextProps> = ({ text, children }) => {
+const RichText = ({ text, children }) => {
   if (text) {
     return (
       <S.RichText

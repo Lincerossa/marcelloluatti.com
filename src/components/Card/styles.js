@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-import { TCardProps } from './types'
-
-type TImageWrapper = Pick<TCardProps, 'layout'>
-
 export const Card = styled.div`
   background-color: white;
   display: block;
@@ -18,7 +14,7 @@ export const Card = styled.div`
   }
 `
 
-export const ImageWrapper = styled.div<TImageWrapper>`
+export const ImageWrapper = styled.div`
   position: relative;
 
   overflow: hidden;

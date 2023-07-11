@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, {FC } from 'react'
 import * as S from './styles'
 import { TBackgroundProps } from './types'
 

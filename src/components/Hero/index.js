@@ -1,13 +1,9 @@
-import React, { FC } from 'react'
+import React from 'react'
 import * as S from './styles'
 import Wrapper from '../Wrapper'
 import Image from '../Image'
 
-import { THeroProps } from './types'
-
-const Hero: FC<THeroProps> = ({
-  image, maintitle, title, subtitle, supertitle,
-}) => (
+const Hero = ({ image, maintitle, title, subtitle, supertitle }) => (
   <S.HeroWrapper>
     <Image image={image} hasShadow />
     {maintitle && <S.Maintitle>{maintitle}</S.Maintitle>}
