@@ -1,6 +1,6 @@
 import theme from './styles/theme';
 
-const Ca = {
+const ca = {
   slug: 'projects/ca-labs',
   image: {
     src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1729694627/Screenshot_2024-10-23_alle_16.43.18_kn6qy0.png',
@@ -116,7 +116,7 @@ const data = {
       metaTitle: 'Marcello Luatti | About',
       metaDescription: 'Marcello Luatti | About',
       metaImage: null,
-      componentIds: ['RichText_about'],
+      componentIds: ['RichText_about', 'Image_about'],
     },
     {
       slug: 'projects',
@@ -224,14 +224,6 @@ const data = {
       metaImage: null,
       componentIds: ['RichText_blog'],
     },
-    {
-      slug: 'hobby',
-      label: 'Hobby',
-      metaTitle: 'Marcello Luatti | Hobby',
-      metaDescription: 'Marcello Luatti | Hobby',
-      metaImage: null,
-      componentIds: ['RichText_hobby'],
-    },
   ],
   components: [
     {
@@ -241,7 +233,6 @@ const data = {
         { text: 'About', slug: '/about' },
         { text: 'Projects', slug: '/projects' },
         { text: 'Blog', slug: '/blog' },
-        { text: 'Hobby', slug: '/hobby' },
         { text: 'Soon...' },
       ],
     },
@@ -329,27 +320,30 @@ const data = {
     {
       id: 'RichText_about',
       component: 'RichText',
-      text: "<p>My name is Marcello Luatti. I'm a 30 year old Front End Engineer based by the <strong>Lake Como</strong> ☀️.</br> I describe myself as ....🤔 </br>  In my free time you can find me hiking 🛹, at the gym 🏋️‍♂️, at the beach 🏖 or playing guitar somewhere 🎸</p>",
-      background: theme.colors.secondary,
-      color: 'white',
+      text: "<p>I'm a 34-year-old <strong>front-end developer</strong>, a family man, and a passionate guitar player living by the beautiful <strong>Lake Como</strong>.</p><p> I love diving into the latest web development technologies and staying updated on all the coolest trends in coding.</p><p>Whether it's building sleek, responsive interfaces or jamming out a few tunes, I’m always up for a creative challenge. Balancing work, family life, and my hobbies can get hectic sometimes, but that’s part of the fun.</p><p>I’m all about <strong>continuous learning</strong>, trying new things, and making sure I find time for the people (and the music) that matter most!</p>",
+      background: theme.colors.light,
+      color: 'inherit',
       padder: 'large',
       wrapper: 'large',
+    },
+    {
+      id: 'Image_about',
+      component: 'Image',
+      image: {
+        src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1614077032/readme%20images/asd_lyzndn.png',
+      },
+
+      background: theme.colors.light,
+      color: 'white',
+      padder: 'regular',
+      wrapper: 'regular',
     },
     {
       id: 'RichText_blog',
       component: 'RichText',
-      text: '<h2>Coming soon...⏰</h2>',
-      background: theme.colors.secondary,
-      color: 'white',
-      padder: 'large',
-      wrapper: 'large',
-    },
-    {
-      id: 'RichText_hobby',
-      component: 'RichText',
-      text: '<h2>Coming soon...⏰</h2>',
-      background: theme.colors.secondary,
-      color: 'white',
+      text: '<h2>Coming soon...⏰</h2><p>The blog is still under development.</p><p>A beta version can be found here <a href="https://cms-blastoff.netlify.app/blog">blog.marcelloluatti.com</a></p>',
+      background: theme.colors.light,
+      color: 'inherit',
       padder: 'large',
       wrapper: 'large',
     },
@@ -357,7 +351,7 @@ const data = {
       id: 'ListOfCards_projects',
       component: 'ListOfCards',
       items: [
-        Ca,
+        ca,
         bpmn,
         asutkin,
         godoo,
