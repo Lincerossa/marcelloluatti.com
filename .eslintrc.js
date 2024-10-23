@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -15,14 +16,12 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['ts', 'tsx'] }],
     'no-use-before-define': 'off',
     semi: ['error', 'never'],
+    singlequote: ['error', 'never'],
     'import/extensions': 0,
     '@typescript-eslint/no-use-before-define': ['error'],
     'import/prefer-default-export': 0,
