@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.4.0...v1.5.0) (2024-10-23)
+
+
+### Features
+
+* 🎸 added some content and restored .js and .jsx ([0c076a4](https://github.com/Lincerossa/marcelloluatti.com/commit/0c076a43e16b3603678c66957abdcb8870253625))
+
 # [1.4.0](https://github.com/Lincerossa/marcelloluatti.com/compare/v1.3.0...v1.4.0) (2021-11-22)
 
 
